@@ -11,8 +11,4 @@ public class TelaInicial extends AppCompatActivity {
         setContentView(R.layout.activity_tela_inicial);
     }
 
-    private void TestUpload(){
-        int i = 1+1;
-    }
-
 }
