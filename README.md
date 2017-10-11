@@ -18,7 +18,10 @@ VCS - Git - Clone - cole a URL do projeto
 
 ![icon](https://user-images.githubusercontent.com/29265857/31325012-d9e39c4a-ac8e-11e7-9f75-5bcfcf7141ff.png)
 
-###Trello : https://trello.com/b/D7hNvIDC/chavoso
+<p align="center">
+  Trello : https://trello.com/b/D7hNvIDC/chavoso
+</p>
+
 
 * **Youssef Muhamad** - Matrícula: 17/0024334 - GitHub: https://github.com/gcc-youssef
 * **Lucas Dutra** - Matrícula: 17/0050939 - GitHub: https://github.com/lucasdutraf
