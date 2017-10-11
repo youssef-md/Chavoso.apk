@@ -23,7 +23,7 @@ VCS - Git - Clone - cole a URL do projeto
  * **Lucas Dutra** - Matrícula: 17/0050939 - GitHub: https://github.com/lucasdutraf
  * **Tiago Miguel** - Matrícula: 17/0046176 - GitHub: 
  * **Daniel de Sousa** - Matrícula: 17/0008371 - GitHub: 
- * **Pedro Rodrigues** - Matrícula: 17/0062686 - GitHub: 
+ * **Pedro Rodrigues** - Matrícula: 17/0062686 - GitHub: https://github.com/Peddroxd
  * **Gabriel Davi** - Matrícula: 17/0010341 - GitHub: 
  * **Ithalo Azevedo** - Matrícula: 17/0069800 - GitHub: 
  
