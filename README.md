@@ -15,7 +15,7 @@ VCS - Git - Clone - cole a URL do projeto
 * Android Studio
 
 ## Authors
-
+![icon](https://user-images.githubusercontent.com/29265857/31325012-d9e39c4a-ac8e-11e7-9f75-5bcfcf7141ff.png)
 * **Youssef Muhamad** - Matrícula: 17/0024334 - GitHub: https://github.com/gcc-youssef
 * **Lucas Dutra** - Matrícula: 17/0050939 - GitHub: 
 * **Tiago Miguel** - Matrícula: 17/0046176 - GitHub: 
