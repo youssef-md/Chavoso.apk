@@ -1,88 +1,29 @@
-# Project Title
+# Chavoso
 
-One Paragraph of project description goes here
+Quantos de nós já ficamos em dúvida de qual corte de cabelo ficaria melhor, partindo desse problemática que nós desenvolvemos um aplicativo para Android, ele será o seu guia e lhe recomendará os melhores cortes de cabelo para o seu tipo de rosto, seu tipo de cabelo e outros parâmetros, para que sua ida ao cabeleireiro seja menos desesperadora e que você saia de lá Chavoso.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
+Inicialmente é necessário clonar o projeto usando o Android Studio para isso siga:
 
 ```
-Give examples
+VCS - Git - Clone - cole a URL do projeto
 ```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* Android Studio
 
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
-
+* **Youssef Muhamad** - Matrícula: 17/0024334 - GitHub: https://github.com/gcc-youssef
+* **Lucas Dutra** - Matrícula: 17/0050939 - GitHub: 
+* **Tiago Miguel** - Matrícula: 17/0046176 - GitHub: 
+* **Daniel de Sousa** - Matrícula: 17/0008371 - GitHub: 
+* **Pedro Rodrigues** - Matrícula: 17/0062686 - GitHub: 
+* **Gabriel Davi** - Matrícula: 17/0010341 - GitHub: 
+* **Ithalo Azevedo** - Matrícula: 17/0069800 - GitHub: 
