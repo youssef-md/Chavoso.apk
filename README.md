@@ -2,6 +2,10 @@
 
 Quantos de nós já ficamos em dúvida de qual corte de cabelo ficaria melhor, partindo desse problemática que nós desenvolvemos um aplicativo para Android, ele será o seu guia e lhe recomendará os melhores cortes de cabelo para o seu tipo de rosto, seu tipo de cabelo e outros parâmetros, para que sua ida ao cabeleireiro seja menos desesperadora e que você saia de lá Chavoso.
 
+## Trello
+
+* https://trello.com/b/D7hNvIDC/chavoso
+
 ## Getting Started
 
 Inicialmente é necessário clonar o projeto usando o Android Studio para isso siga:
@@ -24,5 +28,3 @@ VCS - Git - Clone - cole a URL do projeto
 * **Gabriel Davi** - Matrícula: 17/0010341 - GitHub: 
 * **Ithalo Azevedo** - Matrícula: 17/0069800 - GitHub: 
 
-## Trello da equipe
-https://trello.com/b/D7hNvIDC/chavoso
