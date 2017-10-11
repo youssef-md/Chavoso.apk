@@ -25,4 +25,4 @@ VCS - Git - Clone - cole a URL do projeto
 * **Ithalo Azevedo** - Matrícula: 17/0069800 - GitHub: 
 
 ## Trello da equipe
-*https://trello.com/b/D7hNvIDC/chavoso
+https://trello.com/b/D7hNvIDC/chavoso
