@@ -14,10 +14,6 @@ VCS - Git - Clone - cole a URL do projeto
 
 * Android Studio
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
 ## Authors
 
 * **Youssef Muhamad** - Matrícula: 17/0024334 - GitHub: https://github.com/gcc-youssef
