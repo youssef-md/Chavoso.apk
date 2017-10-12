@@ -4,7 +4,14 @@ Quantos de nós já ficamos em dúvida de qual corte de cabelo ficaria melhor, p
 
 ## Cronograma - Gantter
 
-* https://www.smartapp.com/gantterforgoogledrive/index.html?fileID=0ByW8hvdQC3XGNEl3SFpFUnpVODQ#
+```
+Clique no link abaixo
+```
+* https://drive.google.com/open?id=0ByW8hvdQC3XGZGFnY3oxTDRVajQ
+
+```
+E em "aplicativos conectados" selecione Gantter for Google Drive
+```
 
 ## Getting Started
 
