@@ -18,6 +18,12 @@ E em "aplicativos conectados" selecione Gantter for Google Drive
 ```
 VCS - Git - Clone - cole a URL do projeto
 ```
+## Modelo de Dados
+
+```
+USUÁRIO - CORTES RECOMENDADOS
+```
+* https://ibb.co/gjAuJ6
 
 ## Built With
 
