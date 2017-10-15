@@ -1,6 +1,6 @@
 # Chavoso
 
-Quantos de nós já ficamos em dúvida de qual corte de cabelo ficaria melhor, partindo desse problemática que nós desenvolvemos um aplicativo para Android, ele será o seu guia e lhe recomendará os melhores cortes de cabelo para o seu tipo de rosto, seu tipo de cabelo e outros parâmetros, para que sua ida ao cabeleireiro seja menos desesperadora e que você saia de lá Chavoso.
+     Quantos de nós já ficamos em dúvida de qual corte de cabelo ficaria melhor, partindo desse problemática que nós desenvolvemos um aplicativo para Android, ele será o seu guia e lhe recomendará os melhores cortes de cabelo para o seu tipo de rosto, seu tipo de cabelo e outros parâmetros, para que sua ida ao cabeleireiro seja menos desesperadora e que você saia de lá Chavoso.
 
 ## Cronograma - Gantter
 
