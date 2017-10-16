@@ -45,7 +45,7 @@ USUÁRIO - CORTES RECOMENDADOS
 
  * **Youssef Muhamad** - Matrícula: 17/0024334 - GitHub: https://github.com/gcc-youssef
  * **Lucas Dutra** - Matrícula: 17/0050939 - GitHub: https://github.com/lucasdutraf
- * **Tiago Miguel** - Matrícula: 17/0046176 - GitHub: 
+ * **Tiago Miguel** - Matrícula: 17/0046176 - GitHub: https://github.com/tmcstiago
  * **Daniel de Sousa** - Matrícula: 17/0008371 - GitHub: https://github.com/MestreMeliante
  * **Pedro Rodrigues** - Matrícula: 17/0062686 - GitHub: https://github.com/Peddroxd
  * **Gabriel Davi** - Matrícula: 17/0010341 - GitHub: 
