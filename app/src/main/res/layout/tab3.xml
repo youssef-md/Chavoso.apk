@@ -1,4 +1,6 @@
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:paddingBottom="16dp"
@@ -14,4 +16,12 @@
         android:layout_height="wrap_content"
         android:text="tab3" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/btn_cortes_rec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Cortes Rec"
+        android:layout_gravity="center"
+        android:layout_marginTop="450dp"/>
+</LinearLayout>
