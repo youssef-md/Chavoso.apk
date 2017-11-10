@@ -1,5 +1,4 @@
-<LinearLayout
-    android:orientation="vertical"
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -23,5 +22,6 @@
         android:gravity="center"
         android:text="Cortes Rec"
         android:layout_gravity="center"
-        android:layout_marginTop="450dp"/>
-</LinearLayout>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+</RelativeLayout>
