@@ -24,6 +24,7 @@ public class Inicial extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intentEntrar = new Intent(Inicial.this, AttCaractActivity.class);
                 startActivity(intentEntrar);
+                finish();
             }
         }) ;
     }

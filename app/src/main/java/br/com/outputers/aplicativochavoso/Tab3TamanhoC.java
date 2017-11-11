@@ -28,6 +28,7 @@ public class Tab3TamanhoC extends Fragment {
             public void onClick(View view) {
                 Intent intentCortesRec = new Intent(getActivity(), CortesRecActivity.class);
                 startActivity(intentCortesRec);
+                getActivity().finish();
             }
         });
 
