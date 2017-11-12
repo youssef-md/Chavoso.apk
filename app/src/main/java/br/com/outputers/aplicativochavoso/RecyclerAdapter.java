@@ -1,15 +1,14 @@
 package br.com.outputers.aplicativochavoso;
 
+import android.content.ContentProvider;
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
-import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
 
 /**
@@ -19,11 +18,13 @@ import java.util.ArrayList;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
 
     ArrayList<AlbumCortes> arrayList = new ArrayList<>();
+    Context context; // Context para o android saber quem sou eu ao criar uma Intent
 
-    public RecyclerAdapter(ArrayList<AlbumCortes> arrayList){
+    // Construtor que vai settar os valores que foram passados para eles nas variaveis desta classe
+    public RecyclerAdapter(Context context, ArrayList<AlbumCortes> arrayList){
 
         this.arrayList = arrayList;
-
+        this.context = context;
     }
 
     @Override
@@ -37,10 +38,23 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(final MyViewHolder holder, int position) {
 
-        //Picasso.with(context).placeholder(arrayList.get(position).getImg_id());
+        // Populando a RecyclerView
         holder.imageView.setImageResource(arrayList.get(position).getImg_id());
+
+        // Tratando o click em um determinado item
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intentPopUp = new Intent(context, PopUp.class);
+                //passando a posição do item que foi clicado, usando o putExtra
+                intentPopUp.putExtra("position", holder.getAdapterPosition());
+                context.startActivity(intentPopUp);
+
+            }
+        });
 
     }
 
@@ -56,7 +70,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
         public MyViewHolder(View itemView) {
 
             super(itemView);
-            imageView = (ImageView)itemView.findViewById(R.id.album_cortes_rec);
+            imageView = itemView.findViewById(R.id.album_cortes_rec);
         }
     }
 

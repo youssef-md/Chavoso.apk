@@ -2,9 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.outputers.aplicativochavoso">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,10 +13,11 @@
             android:name=".AttCaractActivity"
             android:label="Caracteristicas"
             android:theme="@style/AppTheme.NoActionBar">
+
         </activity>
         <activity
             android:name=".CortesRecActivity"
-            android:label="Cortes recomendados"></activity>
+            android:label="Cortes recomendados" />
         <activity android:name=".Inicial">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".PopUp"></activity>
     </application>
 
 </manifest>

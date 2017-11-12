@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="400dp"
+    android:layout_height="380dp"
+    android:background="@color/colorPrimaryDark"
+    android:layout_gravity="center"
+    android:padding="5dp"
+    tools:context="br.com.outputers.aplicativochavoso.PopUp">
+
+
+    <Button
+        android:id="@+id/btn_fechar_popup"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="X"
+        android:textAlignment="center"
+        android:textColor="#FFFF"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/circlebackground"/>
+
+    <ImageView
+        android:id="@+id/full_popup_image"
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        android:layout_alignParentBottom="true"
+        android:scaleType="centerCrop"/>
+
+</RelativeLayout>

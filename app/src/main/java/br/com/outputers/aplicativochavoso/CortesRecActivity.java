@@ -1,5 +1,6 @@
 package br.com.outputers.aplicativochavoso;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -10,19 +11,20 @@ import java.util.ArrayList;
 
 public class CortesRecActivity extends AppCompatActivity {
 
+    // Criando os fields
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
     ArrayList<AlbumCortes> arrayList = new ArrayList<>();
 
+
+    // Vetor que guarda o caminho das faixas com o corte e sua descrição
     int[] img_id = {
-            R.drawable.liso_curto_1, R.drawable.liso_medio_1,
-            R.drawable.liso_longo_1, R.drawable.af_curto_1,
-            R.drawable.af_medio_1, R.drawable.af_longo_1,
-            R.drawable.enr_curto_1, R.drawable.enr_medio_1,
-            R.drawable.enr_longo_1, R.drawable.ond_curto_1,
-            R.drawable.ond_medio_1, R.drawable.ond_longo_1
+            R.drawable.af_curto_1,R.drawable.af_curto_2,
+            R.drawable.af_curto_3,R.drawable.af_curto_4,
+            R.drawable.af_curto_5
     };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,17 +32,19 @@ public class CortesRecActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cortes_rec);
 
-        recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
-        layoutManager = new GridLayoutManager(this,3);
+        //Instanciando
+        recyclerView = findViewById(R.id.recyclerView);
+        layoutManager = new GridLayoutManager(this,1);// Quantidade por coluna
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
 
+        // Populando o ArrayList
         for(int id : img_id){
 
             arrayList.add(new AlbumCortes(id));
         }
 
-        adapter = new RecyclerAdapter(arrayList);
+        adapter = new RecyclerAdapter(this, arrayList);
         recyclerView.setAdapter(adapter);
 
     }
