@@ -1,7 +1,7 @@
 ![githubwidelogo](https://user-images.githubusercontent.com/29265857/31590467-82227808-b1ef-11e7-9bd8-d3202c8937b8.jpg)
 
 
-Quantos de nós já ficamos em dúvida de qual corte de cabelo ficaria melhor, partindo desse problemática que nós desenvolvemos um aplicativo para Android, ele será o seu guia e lhe recomendará os melhores cortes de cabelo para o seu tipo de rosto, seu tipo de cabelo e outros parâmetros, para que sua ida ao cabeleireiro seja menos desesperadora e que você saia de lá Chavoso. Mais informações você encontra na Wiki.
+Quantos de nós já ficamos em dúvida de qual corte de cabelo ficaria melhor, partindo dessa problemática que nós desenvolvemos um aplicativo para Android, ele será o seu guia e lhe recomendará os melhores cortes de cabelo para o seu tipo de rosto, seu tipo de cabelo e outros parâmetros, para que sua ida ao cabeleireiro seja menos desesperadora e que você saia de lá Chavoso. Mais informações você encontra na Wiki.
 ## Requisitos Funcionais 
 
 ```
