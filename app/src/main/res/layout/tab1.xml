@@ -17,25 +17,25 @@
         <ImageButton
             android:id="@+id/imgbtn_rosto_quadrado"
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="220dp"
             android:background="@drawable/rosto_quadrado"/>
 
         <ImageButton
             android:id="@+id/imgbtn_rosto_redondo"
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="220dp"
             android:background="@drawable/rosto_redondo"/>
 
         <ImageButton
             android:id="@+id/imgbtn_rosto_oval"
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="220dp"
             android:background="@drawable/rosto_oval"/>
 
         <ImageButton
             android:id="@+id/imgbtn_rosto_triangular"
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="220dp"
             android:background="@drawable/rosto_triangular"/>
 
     </LinearLayout>

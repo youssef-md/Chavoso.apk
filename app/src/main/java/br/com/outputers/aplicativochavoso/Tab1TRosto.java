@@ -16,6 +16,10 @@ import android.widget.Toast;
 
 public class Tab1TRosto extends Fragment  {
 
+    String TipoRosto = "null";
+    String TipoCabelo = "null";
+    String TamanhoCabelo = "null";
+
     ImageButton btnRostoQuadrado;
     ImageButton btnRostoRedondo;
     ImageButton btnRostoOval;
@@ -36,28 +40,36 @@ public class Tab1TRosto extends Fragment  {
         btnRostoQuadrado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(rootView.getContext(), "quadrado", Toast.LENGTH_SHORT).show();
+
+                TipoRosto = "quadrado";
+                Toast.makeText(rootView.getContext(), TipoRosto, Toast.LENGTH_SHORT).show();
             }
         });
 
         btnRostoRedondo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(rootView.getContext(), "redondo", Toast.LENGTH_SHORT).show();
+
+                TipoRosto = "redondo";
+                Toast.makeText(rootView.getContext(), TipoRosto, Toast.LENGTH_SHORT).show();
             }
         });
 
         btnRostoOval.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(rootView.getContext(), "oval", Toast.LENGTH_SHORT).show();
+
+                TipoRosto = "oval";
+                Toast.makeText(rootView.getContext(), TipoRosto, Toast.LENGTH_SHORT).show();
             }
         });
 
         btnRostoTriangular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(rootView.getContext(), "triangular", Toast.LENGTH_SHORT).show();
+
+                TipoRosto = "triangular";
+                Toast.makeText(rootView.getContext(),TipoRosto, Toast.LENGTH_SHORT).show();
             }
         });
 
