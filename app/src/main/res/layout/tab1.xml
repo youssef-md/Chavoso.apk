@@ -1,17 +1,42 @@
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:paddingBottom="16dp"
-    android:paddingTop="16dp"
-    android:paddingRight="64dp"
-    android:paddingLeft="64dp"
+<ScrollView
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="64dp"
+        android:paddingLeft="64dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#dd2e44"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="tab1"/>
+        <ImageButton
+            android:id="@+id/imgbtn_rosto_quadrado"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:background="@drawable/rosto_quadrado"/>
 
-</android.support.constraint.ConstraintLayout>
+        <ImageButton
+            android:id="@+id/imgbtn_rosto_redondo"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:background="@drawable/rosto_redondo"/>
+
+        <ImageButton
+            android:id="@+id/imgbtn_rosto_oval"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:background="@drawable/rosto_oval"/>
+
+        <ImageButton
+            android:id="@+id/imgbtn_rosto_triangular"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:background="@drawable/rosto_triangular"/>
+
+    </LinearLayout>
+</ScrollView>

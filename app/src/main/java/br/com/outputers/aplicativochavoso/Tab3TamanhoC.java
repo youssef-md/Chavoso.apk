@@ -22,6 +22,7 @@ public class Tab3TamanhoC extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.tab3, container, false);
 
+
         btnCortesRec = (Button) rootView.findViewById(R.id.btn_cortes_rec);
         btnCortesRec.setOnClickListener(new View.OnClickListener() {
             @Override
