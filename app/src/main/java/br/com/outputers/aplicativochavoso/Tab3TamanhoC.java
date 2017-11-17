@@ -16,12 +16,16 @@ import android.widget.Toast;
 
 public class Tab3TamanhoC extends Fragment {
 
-    String TamanhoCabelo = "null";
+    static String TamanhoCabelo = "null";
 
     Button btnCortesRec;
     ImageButton btnTamanhoCurto;
     ImageButton btnTamanhoMedio;
     ImageButton btnTamandoLongo;
+
+    public static String getTamanhoCabelo(){
+        return TamanhoCabelo;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

@@ -20,16 +20,34 @@ public class CortesRecActivity extends AppCompatActivity {
     ArrayList<AlbumCortes> arrayList = new ArrayList<>();
 
 
-    // Vetor que guarda o caminho das faixas com o corte e sua descrição
-    int[] img_id = {
-            R.drawable.af_curto_1,R.drawable.af_curto_2,
-            R.drawable.af_curto_3,R.drawable.af_curto_4,
-            R.drawable.af_curto_5
-    };
+    String mTipoRosto = Tab1TRosto.getTipoRosto();
+    String mTipoCabelo = Tab2TCabelo.getTipoCabelo();
+    String mTamanhoCabelo = Tab3TamanhoC.getTamanhoCabelo();
+
+    //Objet vetor do caminho das imagens não populado
+    public int[] img_id = new int[]{};
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //Verificando as combinações e populando o vetor
+        if(mTipoCabelo == "afro" && mTamanhoCabelo == "curto"){
+
+            img_id = new int[]{
+                    R.drawable.af_curto_1, R.drawable.af_curto_2,
+                    R.drawable.af_curto_3, R.drawable.af_curto_4,
+                    R.drawable.af_curto_5
+            };
+        }else if(mTipoCabelo == "cacheado" && mTamanhoCabelo == "curto"){
+            img_id = new int[]{
+                    R.drawable.cach_curto_1, R.drawable.cach_curto_2,
+                    R.drawable.cach_curto_3, R.drawable.cach_curto_4,
+                    R.drawable.cach_curto_5
+            };
+
+        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cortes_rec);

@@ -14,11 +14,16 @@ import android.widget.Toast;
 
 public class Tab2TCabelo extends Fragment {
 
-    String TipoCabelo = "null";
+    static String TipoCabelo = "null";
+
     ImageButton btnCabeloAfro;
     ImageButton btnCabeloCacheado;
     ImageButton btnCabeloLiso;
     ImageButton btnCabeloOndulado;
+
+    public static String getTipoCabelo(){
+        return TipoCabelo;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

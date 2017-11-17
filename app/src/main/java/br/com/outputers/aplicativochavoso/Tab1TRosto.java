@@ -16,12 +16,17 @@ import android.widget.Toast;
 
 public class Tab1TRosto extends Fragment  {
 
-    String TipoRosto = "null";
+    static String TipoRosto = "null";
 
     ImageButton btnRostoQuadrado;
     ImageButton btnRostoRedondo;
     ImageButton btnRostoOval;
     ImageButton btnRostoTriangular;
+
+    static public String getTipoRosto(){
+        return TipoRosto;
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -72,8 +77,5 @@ public class Tab1TRosto extends Fragment  {
 
         return rootView;
     }
-
-
-
 
 }
