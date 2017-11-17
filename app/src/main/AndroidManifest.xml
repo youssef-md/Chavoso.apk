@@ -12,9 +12,7 @@
         <activity
             android:name=".AttCaractActivity"
             android:label="Caracteristicas"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".CortesRecActivity"
             android:label="Cortes recomendados" />
@@ -25,9 +23,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".PopUp">
-        </activity>
+        <activity android:name=".PopUp"></activity>
+        <activity android:name=".CuidadosActivity"></activity>
     </application>
 
 </manifest>
