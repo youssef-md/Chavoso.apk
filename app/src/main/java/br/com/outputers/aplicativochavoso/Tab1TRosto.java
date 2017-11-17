@@ -17,8 +17,6 @@ import android.widget.Toast;
 public class Tab1TRosto extends Fragment  {
 
     String TipoRosto = "null";
-    String TipoCabelo = "null";
-    String TamanhoCabelo = "null";
 
     ImageButton btnRostoQuadrado;
     ImageButton btnRostoRedondo;
@@ -26,8 +24,7 @@ public class Tab1TRosto extends Fragment  {
     ImageButton btnRostoTriangular;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.tab1, container, false);
 
         //instanciando os btn, sempre usando rootView.

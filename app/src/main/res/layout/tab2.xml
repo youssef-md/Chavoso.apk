@@ -1,19 +1,44 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:paddingBottom="16dp"
-    android:paddingTop="16dp"
-    android:paddingRight="64dp"
-    android:paddingLeft="64dp"
-    android:layout_width="match_parent"
+<ScrollView
     android:layout_height="match_parent"
-    android:background="#dd2e44">
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="tab2" />
+    <LinearLayout
+        android:orientation="vertical"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="64dp"
+        android:paddingLeft="64dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#dd2e44">
 
-</RelativeLayout>
+        <ImageButton
+            android:id="@+id/imgbtn_cabelo_afro"
+            android:layout_width="match_parent"
+            android:layout_height="225dp"
+            android:background="@drawable/cabelo_afro"/>
+
+        <ImageButton
+            android:id="@+id/imgbtn_cabelo_cacheado"
+            android:layout_width="match_parent"
+            android:layout_height="225dp"
+            android:background="@drawable/cabelo_cacheado"/>
+
+        <ImageButton
+            android:id="@+id/imgbtn_cabelo_liso"
+            android:layout_width="match_parent"
+            android:layout_height="225dp"
+            android:background="@drawable/cabelo_liso"/>
+
+        <ImageButton
+            android:id="@+id/imgbtn_cabelo_ondulado"
+            android:layout_width="match_parent"
+            android:layout_height="225dp"
+            android:background="@drawable/cabelo_ondulado"/>
+
+    </LinearLayout>
+
+</ScrollView>
