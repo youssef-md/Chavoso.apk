@@ -18,12 +18,12 @@
 
     <ImageButton
         android:id="@+id/image_button_cuidados"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
         android:background="@android:drawable/presence_invisible"
-        android:layout_margin="25dp"
+        android:layout_margin="10dp"
         android:src="@drawable/botao_cuidados_v2"
         android:scaleType="fitCenter"
         android:text="Button" />
