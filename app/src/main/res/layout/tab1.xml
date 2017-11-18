@@ -11,32 +11,35 @@
         android:paddingLeft="64dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#dd2e44"
+        android:background="#3c3c3c"
         android:orientation="vertical">
 
         <ImageButton
             android:id="@+id/imgbtn_rosto_quadrado"
-            android:layout_width="match_parent"
+            android:layout_width="225dp"
             android:layout_height="225dp"
-            android:background="@drawable/rosto_quadrado"/>
-
+            android:background="@drawable/rosto_diamante"
+            android:layout_gravity="center"/>
         <ImageButton
             android:id="@+id/imgbtn_rosto_redondo"
-            android:layout_width="match_parent"
+            android:layout_width="225dp"
             android:layout_height="225dp"
-            android:background="@drawable/rosto_redondo"/>
-
-        <ImageButton
-            android:id="@+id/imgbtn_rosto_oval"
-            android:layout_width="match_parent"
-            android:layout_height="225dp"
-            android:background="@drawable/rosto_oval"/>
+            android:background="@drawable/rosto_oval"
+            android:layout_gravity="center"/>
 
         <ImageButton
             android:id="@+id/imgbtn_rosto_triangular"
-            android:layout_width="match_parent"
+            android:layout_width="225dp"
             android:layout_height="225dp"
-            android:background="@drawable/rosto_triangular"/>
+            android:background="@drawable/rosto_quadrado"
+            android:layout_gravity="center"/>
+
+        <ImageButton
+            android:id="@+id/imgbtn_rosto_oval"
+            android:layout_width="225dp"
+            android:layout_height="225dp"
+            android:background="@drawable/rosto_redondo"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
 </ScrollView>
