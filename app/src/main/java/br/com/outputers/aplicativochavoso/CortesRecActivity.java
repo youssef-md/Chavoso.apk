@@ -34,22 +34,8 @@ public class CortesRecActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        //Verificando as combinações e populando o vetor
-        if(mTipoCabelo == "afro" && mTamanhoCabelo == "curto"){
-
-            img_id = new int[]{
-                    R.drawable.af_curto_1, R.drawable.af_curto_2,
-                    R.drawable.af_curto_3, R.drawable.af_curto_4,
-                    R.drawable.af_curto_5
-            };
-        }else if(mTipoCabelo == "cacheado" && mTamanhoCabelo == "curto"){
-            img_id = new int[]{
-                    R.drawable.cach_curto_1, R.drawable.cach_curto_2,
-                    R.drawable.cach_curto_3, R.drawable.cach_curto_4,
-                    R.drawable.cach_curto_5
-            };
-
-        }
+        //função para popular o vetor com base na combinação do usuário
+        VerificarCombinacao();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cortes_rec);
@@ -77,6 +63,46 @@ public class CortesRecActivity extends AppCompatActivity {
                 startActivity(intentCuidados);
             }
         });
+
+    }
+
+    private void VerificarCombinacao() {
+
+        //Verificando as combinações e populando o vetor
+        if(mTipoCabelo == "afro" && mTamanhoCabelo == "curto"){
+
+            img_id = new int[]{
+                    R.drawable.af_curto_1, R.drawable.af_curto_2,
+                    R.drawable.af_curto_3, R.drawable.af_curto_4,
+                    R.drawable.af_curto_5
+            };
+        }else if(mTipoCabelo == "afro" && mTamanhoCabelo == "medio"){
+
+            img_id = new int[]{
+                    R.drawable.af_medio_1, R.drawable.af_medio_2,
+                    R.drawable.af_medio_3, R.drawable.af_medio_4,
+                    R.drawable.af_medio_5
+            };
+
+        } else if(mTipoCabelo == "afro" && mTamanhoCabelo == "longo"){
+
+            img_id = new int[]{
+                    R.drawable.af_longo_1, R.drawable.af_longo_2,
+                    R.drawable.af_longo_3,R.drawable.af_longo_4
+            };
+
+        }else if(mTipoCabelo == "cacheado" && mTamanhoCabelo == "curto"){
+
+            img_id = new int[]{
+                    R.drawable.cach_curto_1, R.drawable.cach_curto_2,
+                    R.drawable.cach_curto_3, R.drawable.cach_curto_4
+            };
+        }else if(mTipoCabelo == "cacheado" && mTamanhoCabelo == "medio"){
+            img_id = new int[]{
+                    R.drawable.cach_medio_1, R.drawable.cach_medio_2,
+                    R.drawable.cach_medio_3, R.drawable.cach_medio_4
+            };
+        }
 
     }
 

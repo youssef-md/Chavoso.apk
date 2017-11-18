@@ -11,16 +11,19 @@ import java.util.ArrayList;
 
 public class PopUp extends AppCompatActivity {
 
-    // Vetor com o caminho das imagens fullsize
-    int[] full_img_id = {
-            R.drawable.full_af_curto_1, R.drawable.full_af_curto_2,
-            R.drawable.full_af_curto_3, R.drawable.full_af_curto_4,
-            R.drawable.full_af_curto_5
-    };
+    String mTipoRosto = Tab1TRosto.getTipoRosto();
+    String mTipoCabelo = Tab2TCabelo.getTipoCabelo();
+    String mTamanhoCabelo = Tab3TamanhoC.getTamanhoCabelo();
+
+    //Objet vetor do caminho das imagens não populado
+    public int[] full_img_id = new int[]{};
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        VerificarCombinacao();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop_up);
 
@@ -37,5 +40,45 @@ public class PopUp extends AppCompatActivity {
 
         ImageView imageView = findViewById(R.id.full_popup_image);
         imageView.setImageResource(full_img_id[position]);
+    }
+
+    private void VerificarCombinacao() {
+
+        //Verificando as combinações e populando o vetor
+        if(mTipoCabelo == "afro" && mTamanhoCabelo == "curto"){
+
+            full_img_id = new int[]{
+                    R.drawable.full_af_curto_1, R.drawable.full_af_curto_2,
+                    R.drawable.full_af_curto_3, R.drawable.full_af_curto_4,
+                    R.drawable.full_af_curto_5
+            };
+        }else if(mTipoCabelo == "afro" && mTamanhoCabelo == "medio"){
+
+            full_img_id = new int[]{
+                    R.drawable.full_af_medio_1, R.drawable.full_af_medio_2,
+                    R.drawable.full_af_medio_3, R.drawable.full_af_medio_4,
+                    R.drawable.full_af_medio_5,
+             };
+
+        } else if(mTipoCabelo == "afro" && mTamanhoCabelo == "longo"){
+
+            full_img_id = new int[]{
+                    R.drawable.full_af_longo_1, R.drawable.full_af_longo_2,
+                    R.drawable.full_af_longo_3, R.drawable.full_af_longo_4
+            };
+
+        }else if(mTipoCabelo == "cacheado" && mTamanhoCabelo == "curto"){
+
+            full_img_id = new int[]{
+                    R.drawable.full_cach_curto_1, R.drawable.full_cach_curto_2,
+                    R.drawable.full_cach_curto_3, R.drawable.full_cach_curto_4
+            };
+        }else if(mTipoCabelo == "cacheado" && mTamanhoCabelo == "medio"){
+            full_img_id = new int[]{
+                    R.drawable.full_cach_medio_1, R.drawable.full_cach_medio_2,
+                    R.drawable.full_cach_medio_3, R.drawable.full_cach_medio_4
+            };
+        }
+
     }
 }
