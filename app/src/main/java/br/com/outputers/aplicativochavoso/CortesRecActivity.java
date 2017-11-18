@@ -8,6 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.View;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 
@@ -27,7 +29,7 @@ public class CortesRecActivity extends AppCompatActivity {
     //Objet vetor do caminho das imagens não populado
     public int[] img_id = new int[]{};
 
-
+    ImageButton buttonCuidados;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +68,15 @@ public class CortesRecActivity extends AppCompatActivity {
 
         adapter = new RecyclerAdapter(this, arrayList);
         recyclerView.setAdapter(adapter);
+
+        buttonCuidados = (ImageButton) findViewById(R.id.image_button_cuidados);
+        buttonCuidados.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentCuidados = new Intent(CortesRecActivity.this, CuidadosActivity.class);
+                startActivity(intentCuidados);
+            }
+        });
 
     }
 

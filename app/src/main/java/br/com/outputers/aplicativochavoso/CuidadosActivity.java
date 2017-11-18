@@ -10,4 +10,6 @@ public class CuidadosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cuidados);
     }
+
+    String cuidado_no_banho = "Abuse de hidratações e produtos que redutores de volume e anti-frizz.";
 }
