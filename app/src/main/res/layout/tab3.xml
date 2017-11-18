@@ -2,7 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android" >
-    <LinearLayout
+    <RelativeLayout
         android:orientation="vertical"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -12,7 +12,7 @@
         android:paddingLeft="64dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#dd2e44">
+        android:background="#3c3c3c">
 
         <ImageButton
             android:id="@+id/imgbtn_tamanho_curto"
@@ -24,22 +24,28 @@
             android:id="@+id/imgbtn_tamanho_medio"
             android:layout_width="match_parent"
             android:layout_height="225dp"
-            android:background="@drawable/tamanho_medio"/>
+            android:background="@drawable/tamanho_medio"
+            android:layout_below="@+id/imgbtn_tamanho_curto"/>
         <ImageButton
             android:id="@+id/imgbtn_tamanho_longo"
             android:layout_width="match_parent"
             android:layout_height="225dp"
-            android:background="@drawable/tamanho_longo"/>
+            android:background="@drawable/tamanho_longo"
+            android:layout_below="@+id/imgbtn_tamanho_medio"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/btn_cortes_rec"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="Cortes" />
+            android:background="@android:drawable/presence_invisible"
+            android:layout_margin="25dp"
+            android:src="@drawable/rosto"
+            android:scaleType="fitCenter"
+            android:text="Button" />
 
-    </LinearLayout>
+
+
+    </RelativeLayout>
 </ScrollView>
