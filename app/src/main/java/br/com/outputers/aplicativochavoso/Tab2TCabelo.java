@@ -21,9 +21,6 @@ public class Tab2TCabelo extends Fragment {
     ImageButton btnCabeloLiso;
     ImageButton btnCabeloOndulado;
 
-    public static String getTipoCabelo(){
-        return TipoCabelo;
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

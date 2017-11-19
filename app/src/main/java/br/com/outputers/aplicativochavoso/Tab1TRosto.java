@@ -23,10 +23,6 @@ public class Tab1TRosto extends Fragment  {
     ImageButton btnRostoOval;
     ImageButton btnRostoDiamante;
 
-    static public String getTipoRosto(){
-        return TipoRosto;
-    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

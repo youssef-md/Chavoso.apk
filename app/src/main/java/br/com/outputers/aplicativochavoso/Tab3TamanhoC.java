@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import static br.com.outputers.aplicativochavoso.Tab1TRosto.TipoRosto;
+import static br.com.outputers.aplicativochavoso.Tab2TCabelo.TipoCabelo;
+
 /**
  * Created by Lucas Dutra on 11/09/2017.
  */
@@ -23,9 +26,7 @@ public class Tab3TamanhoC extends Fragment {
     ImageButton btnTamanhoMedio;
     ImageButton btnTamandoLongo;
 
-    public static String getTamanhoCabelo(){
-        return TamanhoCabelo;
-    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -41,9 +42,15 @@ public class Tab3TamanhoC extends Fragment {
         btnCortesRec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentCortesRec = new Intent(getActivity(), CortesRecActivity.class);
-                startActivity(intentCortesRec);
-                getActivity().finish();
+
+                //Tratando usuário retardado
+                if(TipoRosto == "null" || TipoCabelo == "null" || TamanhoCabelo == "null"){
+                    Toast.makeText(rootView.getContext(), "Preencha todos os dados antes de prosseguir, mongol", Toast.LENGTH_SHORT).show();
+                }else{
+                    Intent intentCortesRec = new Intent(getActivity(), CortesRecActivity.class);
+                    startActivity(intentCortesRec);
+                    getActivity().finish();
+                }
             }
         });
 

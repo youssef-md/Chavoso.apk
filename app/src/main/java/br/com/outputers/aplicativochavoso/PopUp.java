@@ -11,9 +11,9 @@ import java.util.ArrayList;
 
 public class PopUp extends AppCompatActivity {
 
-    String mTipoRosto = Tab1TRosto.getTipoRosto();
-    String mTipoCabelo = Tab2TCabelo.getTipoCabelo();
-    String mTamanhoCabelo = Tab3TamanhoC.getTamanhoCabelo();
+    String mTipoRosto = Tab1TRosto.TipoRosto;
+    String mTipoCabelo = Tab2TCabelo.TipoCabelo;
+    String mTamanhoCabelo = Tab3TamanhoC.TamanhoCabelo;
 
     //Objet vetor do caminho das imagens não populado
     public int[] full_img_id = new int[]{};

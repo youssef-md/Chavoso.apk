@@ -22,9 +22,9 @@ public class CortesRecActivity extends AppCompatActivity {
     ArrayList<AlbumCortes> arrayList = new ArrayList<>();
 
 
-    String mTipoRosto = Tab1TRosto.getTipoRosto();
-    String mTipoCabelo = Tab2TCabelo.getTipoCabelo();
-    String mTamanhoCabelo = Tab3TamanhoC.getTamanhoCabelo();
+    String mTipoRosto = Tab1TRosto.TipoRosto;
+    String mTipoCabelo = Tab2TCabelo.TipoCabelo;
+    String mTamanhoCabelo = Tab3TamanhoC.TamanhoCabelo;
 
     //Objet vetor do caminho das imagens não populado
     public int[] img_id = new int[]{};
