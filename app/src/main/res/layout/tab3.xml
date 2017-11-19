@@ -12,7 +12,7 @@
         android:paddingLeft="64dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#dd2e44">
+        android:background="#3c3c3c">
 
         <ImageButton
             android:id="@+id/imgbtn_tamanho_curto"

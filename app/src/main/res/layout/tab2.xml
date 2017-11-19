@@ -13,31 +13,35 @@
         android:paddingLeft="64dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#dd2e44">
+        android:background="#3c3c3c">
 
         <ImageButton
             android:id="@+id/imgbtn_cabelo_afro"
-            android:layout_width="match_parent"
-            android:layout_height="225dp"
-            android:background="@drawable/cabelo_afro"/>
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/cabelo_afro"
+            android:layout_gravity="center"/>
 
         <ImageButton
             android:id="@+id/imgbtn_cabelo_cacheado"
-            android:layout_width="match_parent"
-            android:layout_height="225dp"
-            android:background="@drawable/cabelo_cacheado"/>
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/cabelo_cacheado"
+            android:layout_gravity="center"/>
 
         <ImageButton
             android:id="@+id/imgbtn_cabelo_liso"
-            android:layout_width="match_parent"
-            android:layout_height="225dp"
-            android:background="@drawable/cabelo_liso"/>
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/cabelo_liso"
+            android:layout_gravity="center"/>
 
         <ImageButton
             android:id="@+id/imgbtn_cabelo_ondulado"
-            android:layout_width="match_parent"
-            android:layout_height="225dp"
-            android:background="@drawable/cabelo_ondulado"/>
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/cabelo_ondulado"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
 
