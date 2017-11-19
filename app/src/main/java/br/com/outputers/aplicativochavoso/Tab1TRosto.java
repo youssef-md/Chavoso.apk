@@ -21,7 +21,7 @@ public class Tab1TRosto extends Fragment  {
     ImageButton btnRostoQuadrado;
     ImageButton btnRostoRedondo;
     ImageButton btnRostoOval;
-    ImageButton btnRostoTriangular;
+    ImageButton btnRostoDiamante;
 
     static public String getTipoRosto(){
         return TipoRosto;
@@ -36,7 +36,7 @@ public class Tab1TRosto extends Fragment  {
         btnRostoQuadrado = rootView.findViewById(R.id.imgbtn_rosto_quadrado);
         btnRostoRedondo = rootView.findViewById(R.id.imgbtn_rosto_redondo);
         btnRostoOval = rootView.findViewById(R.id.imgbtn_rosto_oval);
-        btnRostoTriangular = rootView.findViewById(R.id.imgbtn_rosto_triangular);
+        btnRostoDiamante = rootView.findViewById(R.id.imgbtn_rosto_diamante);
 
 
         btnRostoQuadrado.setOnClickListener(new View.OnClickListener() {
@@ -66,11 +66,11 @@ public class Tab1TRosto extends Fragment  {
             }
         });
 
-        btnRostoTriangular.setOnClickListener(new View.OnClickListener() {
+        btnRostoDiamante.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                TipoRosto = "triangular";
+                TipoRosto = "diamante";
                 Toast.makeText(rootView.getContext(),TipoRosto, Toast.LENGTH_SHORT).show();
             }
         });

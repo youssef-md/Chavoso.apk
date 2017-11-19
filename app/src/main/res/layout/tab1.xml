@@ -15,29 +15,29 @@
         android:orientation="vertical">
 
         <ImageButton
-            android:id="@+id/imgbtn_rosto_quadrado"
-            android:layout_width="225dp"
-            android:layout_height="225dp"
+            android:id="@+id/imgbtn_rosto_diamante"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:background="@drawable/rosto_diamante"
             android:layout_gravity="center"/>
         <ImageButton
-            android:id="@+id/imgbtn_rosto_redondo"
-            android:layout_width="225dp"
-            android:layout_height="225dp"
+            android:id="@+id/imgbtn_rosto_oval"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:background="@drawable/rosto_oval"
             android:layout_gravity="center"/>
 
         <ImageButton
-            android:id="@+id/imgbtn_rosto_triangular"
-            android:layout_width="225dp"
-            android:layout_height="225dp"
+            android:id="@+id/imgbtn_rosto_quadrado"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:background="@drawable/rosto_quadrado"
             android:layout_gravity="center"/>
 
         <ImageButton
-            android:id="@+id/imgbtn_rosto_oval"
-            android:layout_width="225dp"
-            android:layout_height="225dp"
+            android:id="@+id/imgbtn_rosto_redondo"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:background="@drawable/rosto_redondo"
             android:layout_gravity="center"/>
 
