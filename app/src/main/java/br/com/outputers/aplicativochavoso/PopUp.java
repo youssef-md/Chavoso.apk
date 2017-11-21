@@ -78,6 +78,11 @@ public class PopUp extends AppCompatActivity {
                     R.drawable.full_cach_medio_1, R.drawable.full_cach_medio_2,
                     R.drawable.full_cach_medio_3, R.drawable.full_cach_medio_4
             };
+        }else if(mTipoCabelo == "cacheado" && mTamanhoCabelo == "longo"){
+            full_img_id = new int[]{
+                    R.drawable.full_cach_longo_1, R.drawable.full_cach_longo_2,
+                    R.drawable.full_cach_longo_3, R.drawable.full_cach_longo_4
+            };
         }
 
     }

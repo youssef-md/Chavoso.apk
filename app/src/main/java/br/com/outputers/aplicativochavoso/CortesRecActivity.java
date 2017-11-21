@@ -55,6 +55,7 @@ public class CortesRecActivity extends AppCompatActivity {
         adapter = new RecyclerAdapter(this, arrayList);
         recyclerView.setAdapter(adapter);
 
+
         buttonCuidados = (ImageButton) findViewById(R.id.image_button_cuidados);
         buttonCuidados.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,6 +102,11 @@ public class CortesRecActivity extends AppCompatActivity {
             img_id = new int[]{
                     R.drawable.cach_medio_1, R.drawable.cach_medio_2,
                     R.drawable.cach_medio_3, R.drawable.cach_medio_4
+            };
+        }else if(mTipoCabelo == "cacheado" && mTamanhoCabelo == "longo"){
+            img_id = new int[]{
+                    R.drawable.cach_longo_1, R.drawable.cach_longo_2,
+                    R.drawable.cach_longo_3,R.drawable.cach_longo_4
             };
         }
 
