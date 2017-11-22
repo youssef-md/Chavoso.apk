@@ -21,7 +21,6 @@ public class Tab3TamanhoC extends Fragment {
 
     static String TamanhoCabelo = "null";
 
-    Button btnCortesRec;
     ImageButton btnTamanhoCurto;
     ImageButton btnTamanhoMedio;
     ImageButton btnTamandoLongo;
@@ -33,26 +32,10 @@ public class Tab3TamanhoC extends Fragment {
         final View rootView = inflater.inflate(R.layout.tab3, container, false);
 
 
-        btnCortesRec = (Button) rootView.findViewById(R.id.btn_cortes_rec);
-
         btnTamanhoCurto = rootView.findViewById(R.id.imgbtn_tamanho_curto);
         btnTamanhoMedio = rootView.findViewById(R.id.imgbtn_tamanho_medio);
         btnTamandoLongo = rootView.findViewById(R.id.imgbtn_tamanho_longo);
 
-        btnCortesRec.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                //Tratando usuário retardado
-                if(TipoRosto == "null" || TipoCabelo == "null" || TamanhoCabelo == "null"){
-                    Toast.makeText(rootView.getContext(), "Preencha todos os dados antes de prosseguir, mongol", Toast.LENGTH_SHORT).show();
-                }else{
-                    Intent intentCortesRec = new Intent(getActivity(), CortesRecActivity.class);
-                    startActivity(intentCortesRec);
-                    getActivity().finish();
-                }
-            }
-        });
 
 
         btnTamanhoCurto.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +44,7 @@ public class Tab3TamanhoC extends Fragment {
 
                 TamanhoCabelo = "curto";
                 Toast.makeText(rootView.getContext(), TamanhoCabelo, Toast.LENGTH_SHORT).show();
+                IntentCortesRec(rootView);
             }
         });
 
@@ -70,6 +54,7 @@ public class Tab3TamanhoC extends Fragment {
 
                 TamanhoCabelo = "medio";
                 Toast.makeText(rootView.getContext(), TamanhoCabelo, Toast.LENGTH_SHORT).show();
+                IntentCortesRec(rootView);
             }
         });
 
@@ -79,10 +64,23 @@ public class Tab3TamanhoC extends Fragment {
 
                 TamanhoCabelo = "longo";
                 Toast.makeText(rootView.getContext(), TamanhoCabelo, Toast.LENGTH_SHORT).show();
+                IntentCortesRec(rootView);
             }
         });
 
         return rootView;
+    }
+
+    public void IntentCortesRec(View rootView) {
+
+        //Tratando usuário retardado
+        if (TipoRosto == "null" || TipoCabelo == "null" || TamanhoCabelo == "null") {
+            Toast.makeText(rootView.getContext(), "Preencha todos os dados antes de prosseguir, mongol", Toast.LENGTH_SHORT).show();
+        } else {
+            Intent intentCortesRec = new Intent(getActivity(), CortesRecActivity.class);
+            startActivity(intentCortesRec);
+            getActivity().finish();
+        }
     }
 
 }

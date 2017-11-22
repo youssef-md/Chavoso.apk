@@ -34,15 +34,6 @@
             android:layout_gravity="center"
             android:background="@drawable/tamanho_longo"/>
 
-        <Button
-            android:id="@+id/btn_cortes_rec"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="Cortes" />
 
     </LinearLayout>
 </ScrollView>
