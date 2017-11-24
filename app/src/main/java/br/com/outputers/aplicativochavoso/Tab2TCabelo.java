@@ -16,11 +16,11 @@ public class Tab2TCabelo extends Fragment {
 
     static String TipoCabelo = "null";
 
+
     ImageButton btnCabeloAfro;
     ImageButton btnCabeloCacheado;
     ImageButton btnCabeloLiso;
     ImageButton btnCabeloOndulado;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="#3c3c3c"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#3c3c3c"
+        tools:context="br.com.outputers.aplicativochavoso.CuidadosActivity">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/card_ondulado_blackngold"
+            android:scaleType="centerInside"
+            android:background="#ffd700"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="  Cuidados no banho"
+            android:textColor="#ffd700"
+            android:textSize="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="10dp"
+            android:text="Use shampoo e condicionador específicos para seu tipo de cabelo."
+            android:textColor="#FAFAFA"
+            android:textSize="15dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="  Cuidados com o penteado"
+            android:textColor="#ffd700"
+            android:textSize="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="10dp"
+            android:text="Evite pentear o cabelo quando ele estiver seco."
+            android:textColor="#FAFAFA"
+            android:textSize="15dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="  Cuidados com o adicionais"
+            android:textColor="#ffd700"
+            android:textSize="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="10dp"
+            android:text="Abuse de hidratações e produtos redutores de volume e anti-frizz."
+            android:textColor="#FAFAFA"
+            android:textSize="15dp"/>
+
+    </LinearLayout>
+</ScrollView>

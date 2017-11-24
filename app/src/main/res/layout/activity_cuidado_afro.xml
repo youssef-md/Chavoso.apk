@@ -33,7 +33,7 @@
         android:layout_marginTop="3dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="10dp"
-        android:text="Abuse de hidratações e produtos que redutores de volume e anti-frizz."
+        android:text="Abuse de hidratações e produtos redutores de volume e anti-frizz."
         android:textColor="#FAFAFA"
         android:textSize="15dp"/>
     <TextView
