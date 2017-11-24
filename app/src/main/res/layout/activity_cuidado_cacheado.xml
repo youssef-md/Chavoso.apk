@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#3c3c3c"
-    tools:context="br.com.outputers.aplicativochavoso.CuidadosActivity">
+    android:background="#3c3c3c">
 
     <ImageView
         android:layout_width="match_parent"
@@ -65,4 +62,6 @@
         android:text="Utilize reparadores de pontas."
         android:textColor="#FAFAFA"
         android:textSize="15dp"/>
+
+
 </LinearLayout>
