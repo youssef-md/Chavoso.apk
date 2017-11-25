@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -25,8 +24,6 @@ public class Tab3TamanhoC extends Fragment {
     ImageButton btnTamanhoMedio;
     ImageButton btnTamandoLongo;
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.tab3, container, false);
@@ -43,7 +40,7 @@ public class Tab3TamanhoC extends Fragment {
             public void onClick(View view) {
 
                 TamanhoCabelo = "curto";
-                Toast.makeText(rootView.getContext(), TamanhoCabelo, Toast.LENGTH_SHORT).show();
+                Toast.makeText(rootView.getContext(), "O seu cabelo é "+ TamanhoCabelo, Toast.LENGTH_SHORT).show();
                 IntentCortesRec(rootView);
             }
         });
@@ -53,7 +50,7 @@ public class Tab3TamanhoC extends Fragment {
             public void onClick(View view) {
 
                 TamanhoCabelo = "medio";
-                Toast.makeText(rootView.getContext(), TamanhoCabelo, Toast.LENGTH_SHORT).show();
+                Toast.makeText(rootView.getContext(), "O seu cabelo é "+ TamanhoCabelo, Toast.LENGTH_SHORT).show();
                 IntentCortesRec(rootView);
             }
         });
@@ -63,7 +60,7 @@ public class Tab3TamanhoC extends Fragment {
             public void onClick(View view) {
 
                 TamanhoCabelo = "longo";
-                Toast.makeText(rootView.getContext(), TamanhoCabelo, Toast.LENGTH_SHORT).show();
+                Toast.makeText(rootView.getContext(), "O seu cabelo é "+ TamanhoCabelo, Toast.LENGTH_SHORT).show();
                 IntentCortesRec(rootView);
             }
         });

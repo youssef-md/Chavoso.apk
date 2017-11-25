@@ -9,8 +9,10 @@ import static br.com.outputers.aplicativochavoso.Tab2TCabelo.TipoCabelo;
 public class CuidadosActivity extends AppCompatActivity {
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         //Verificando o tipo de cabelo para relacionar a tela CuidadoCabelo

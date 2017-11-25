@@ -8,9 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -40,7 +38,7 @@ public class Tab1TRosto extends Fragment  {
             public void onClick(View view) {
 
                 TipoRosto = "quadrado";
-                Toast.makeText(rootView.getContext(), TipoRosto, Toast.LENGTH_SHORT).show();
+                Toast.makeText(rootView.getContext(), "O seu tipo de rosto é " + TipoRosto, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -49,7 +47,7 @@ public class Tab1TRosto extends Fragment  {
             public void onClick(View view) {
 
                 TipoRosto = "redondo";
-                Toast.makeText(rootView.getContext(), TipoRosto, Toast.LENGTH_SHORT).show();
+                Toast.makeText(rootView.getContext(), "O seu tipo de rosto é " + TipoRosto, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -58,7 +56,7 @@ public class Tab1TRosto extends Fragment  {
             public void onClick(View view) {
 
                 TipoRosto = "oval";
-                Toast.makeText(rootView.getContext(), TipoRosto, Toast.LENGTH_SHORT).show();
+                Toast.makeText(rootView.getContext(), "O seu tipo de rosto é " + TipoRosto, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -67,7 +65,7 @@ public class Tab1TRosto extends Fragment  {
             public void onClick(View view) {
 
                 TipoRosto = "diamante";
-                Toast.makeText(rootView.getContext(),TipoRosto, Toast.LENGTH_SHORT).show();
+                Toast.makeText(rootView.getContext(),"O seu tipo de rosto é " + TipoRosto, Toast.LENGTH_SHORT).show();
             }
         });
 

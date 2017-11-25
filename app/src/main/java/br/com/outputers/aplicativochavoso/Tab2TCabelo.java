@@ -37,7 +37,7 @@ public class Tab2TCabelo extends Fragment {
             public void onClick(View view) {
 
                 TipoCabelo = "afro";
-                Toast.makeText(rootView.getContext(), TipoCabelo, Toast.LENGTH_SHORT).show();
+                Toast.makeText(rootView.getContext(), "O seu tipo de cabelo é " + TipoCabelo, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -46,7 +46,7 @@ public class Tab2TCabelo extends Fragment {
             public void onClick(View view) {
 
                 TipoCabelo = "cacheado";
-                Toast.makeText(rootView.getContext(), TipoCabelo, Toast.LENGTH_SHORT).show();
+                Toast.makeText(rootView.getContext(),"O seu tipo de cabelo é " + TipoCabelo, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -55,7 +55,7 @@ public class Tab2TCabelo extends Fragment {
             public void onClick(View view) {
 
                 TipoCabelo = "liso";
-                Toast.makeText(rootView.getContext(), TipoCabelo, Toast.LENGTH_SHORT).show();
+                Toast.makeText(rootView.getContext(), "O seu tipo de cabelo é " + TipoCabelo, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -64,11 +64,12 @@ public class Tab2TCabelo extends Fragment {
             public void onClick(View view) {
 
                 TipoCabelo = "ondulado";
-                Toast.makeText(rootView.getContext(), TipoCabelo, Toast.LENGTH_SHORT).show();
+                Toast.makeText(rootView.getContext(), "O seu tipo de cabelo é " + TipoCabelo, Toast.LENGTH_SHORT).show();
             }
         });
 
         return rootView;
     }
+
 }
 

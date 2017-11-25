@@ -5,13 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
+
+import static br.com.outputers.aplicativochavoso.Tab2TCabelo.TipoCabelo;
+import static br.com.outputers.aplicativochavoso.Tab3TamanhoC.TamanhoCabelo;
 
 public class CortesRecActivity extends AppCompatActivity {
 
@@ -20,11 +20,6 @@ public class CortesRecActivity extends AppCompatActivity {
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
     ArrayList<AlbumCortes> arrayList = new ArrayList<>();
-
-
-    String mTipoRosto = Tab1TRosto.TipoRosto;
-    String mTipoCabelo = Tab2TCabelo.TipoCabelo;
-    String mTamanhoCabelo = Tab3TamanhoC.TamanhoCabelo;
 
     //Objet vetor do caminho das imagens não populado
     public int[] img_id = new int[]{};
@@ -67,17 +62,19 @@ public class CortesRecActivity extends AppCompatActivity {
 
     }
 
+
+
     private void VerificarCombinacao() {
 
         //Verificando as combinações e populando o vetor
-        if(mTipoCabelo == "afro" && mTamanhoCabelo == "curto"){
+        if(TipoCabelo == "afro" && TamanhoCabelo == "curto"){
 
             img_id = new int[]{
                     R.drawable.af_curto_1, R.drawable.af_curto_2,
                     R.drawable.af_curto_3, R.drawable.af_curto_4,
                     R.drawable.af_curto_5
             };
-        }else if(mTipoCabelo == "afro" && mTamanhoCabelo == "medio"){
+        }else if(TipoCabelo == "afro" && TamanhoCabelo == "medio"){
 
             img_id = new int[]{
                     R.drawable.af_medio_1, R.drawable.af_medio_2,
@@ -85,25 +82,25 @@ public class CortesRecActivity extends AppCompatActivity {
                     R.drawable.af_medio_5
             };
 
-        } else if(mTipoCabelo == "afro" && mTamanhoCabelo == "longo"){
+        } else if(TipoCabelo == "afro" && TamanhoCabelo == "longo"){
 
             img_id = new int[]{
                     R.drawable.af_longo_1, R.drawable.af_longo_2,
                     R.drawable.af_longo_3,R.drawable.af_longo_4
             };
 
-        }else if(mTipoCabelo == "cacheado" && mTamanhoCabelo == "curto"){
+        }else if(TipoCabelo == "cacheado" && TamanhoCabelo == "curto"){
 
             img_id = new int[]{
                     R.drawable.cach_curto_1, R.drawable.cach_curto_2,
                     R.drawable.cach_curto_3, R.drawable.cach_curto_4
             };
-        }else if(mTipoCabelo == "cacheado" && mTamanhoCabelo == "medio"){
+        }else if(TipoCabelo == "cacheado" && TamanhoCabelo == "medio"){
             img_id = new int[]{
                     R.drawable.cach_medio_1, R.drawable.cach_medio_2,
                     R.drawable.cach_medio_3, R.drawable.cach_medio_4
             };
-        }else if(mTipoCabelo == "cacheado" && mTamanhoCabelo == "longo"){
+        }else if(TipoCabelo == "cacheado" && TamanhoCabelo == "longo"){
             img_id = new int[]{
                     R.drawable.cach_longo_1, R.drawable.cach_longo_2,
                     R.drawable.cach_longo_3,R.drawable.cach_longo_4
