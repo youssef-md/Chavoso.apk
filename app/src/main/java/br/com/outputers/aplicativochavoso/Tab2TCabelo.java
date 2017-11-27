@@ -23,7 +23,9 @@ public class Tab2TCabelo extends Fragment {
     ImageButton btnCabeloLiso;
     ImageButton btnCabeloOndulado;
 
-    CadastroDAO cadastroDAO;
+    SharedPreferences CadastroPreferences;
+
+    //CadastroDAO cadastroDAO;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,7 +38,7 @@ public class Tab2TCabelo extends Fragment {
         btnCabeloOndulado = rootView.findViewById(R.id.imgbtn_cabelo_ondulado);
 
 
-        final SharedPreferences preferences = this.getActivity().getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
+        final SharedPreferences CadastroPreferences = this.getActivity().getSharedPreferences("cadastro", Context.MODE_PRIVATE);
 
         btnCabeloAfro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,7 +46,7 @@ public class Tab2TCabelo extends Fragment {
 
                 TipoCabelo = "afro";
                 GuardarTipoCabelo();
-                Toast.makeText(rootView.getContext(), "O seu tipo de cabelo é " + cadastroDAO.getDataTipoCabelo(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(rootView.getContext(), "O seu tipo de cabelo é " + CadastroPreferences.getString("tipo_cabelo", "nao"), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -54,7 +56,7 @@ public class Tab2TCabelo extends Fragment {
 
                 TipoCabelo = "cacheado";
                 GuardarTipoCabelo();
-                Toast.makeText(rootView.getContext(),"O seu tipo de cabelo é " + cadastroDAO.getDataTipoCabelo(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(rootView.getContext(),"O seu tipo de cabelo é " + CadastroPreferences.getString("tipo_cabelo", "nao"), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -64,7 +66,7 @@ public class Tab2TCabelo extends Fragment {
 
                 TipoCabelo = "liso";
                 GuardarTipoCabelo();
-                Toast.makeText(rootView.getContext(), "O seu tipo de cabelo é " + cadastroDAO.getDataTipoCabelo(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(rootView.getContext(), "O seu tipo de cabelo é " + CadastroPreferences.getString("tipo_cabelo", "nao"), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -74,7 +76,7 @@ public class Tab2TCabelo extends Fragment {
 
                 TipoCabelo = "ondulado";
                 GuardarTipoCabelo();
-                Toast.makeText(rootView.getContext(), "O seu tipo de cabelo é " + cadastroDAO.getDataTipoCabelo(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(rootView.getContext(), "O seu tipo de cabelo é " + CadastroPreferences.getString("tipo_cabelo", "nao"), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -83,9 +85,16 @@ public class Tab2TCabelo extends Fragment {
 
     public void GuardarTipoCabelo(){
 
-        cadastroDAO = new CadastroDAO(this.getContext());
+        /*cadastroDAO = new CadastroDAO(this.getContext());
         cadastroDAO.insertTipoCabelo(TipoCabelo);
         cadastroDAO.close();
+        */
+        CadastroPreferences = this.getActivity().getSharedPreferences("cadastro", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = CadastroPreferences.edit();
+        editor.putString("tipo_cabelo", TipoCabelo);
+        editor.apply();
+
+
     }
 
 }

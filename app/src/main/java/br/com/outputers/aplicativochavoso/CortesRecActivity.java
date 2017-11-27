@@ -26,19 +26,24 @@ public class CortesRecActivity extends AppCompatActivity {
 
     ImageButton buttonCuidados;
 
-    CadastroDAO cadastroDAO;
+    //CadastroDAO cadastroDAO;
     String mTipoCabelo;
     String mTamanhoCabelo;
+    SharedPreferences CadastroPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
-        cadastroDAO = new CadastroDAO(this);
+        CadastroPreferences = getSharedPreferences("cadastro",MODE_PRIVATE);
+        mTipoCabelo = CadastroPreferences.getString("tipo_cabelo","nao");
+        mTamanhoCabelo = CadastroPreferences.getString("tamanho_cabelo", "nao");
 
+        /*cadastroDAO = new CadastroDAO(this);
         mTipoCabelo = cadastroDAO.getDataTipoCabelo();
         mTamanhoCabelo = cadastroDAO.getDataTamanhoCabelo();
+        cadastroDAO.close();*/
 
         VerificarCombinacao();
 
@@ -73,10 +78,6 @@ public class CortesRecActivity extends AppCompatActivity {
 
     private void VerificarCombinacao() {
 
-
-
-        Toast.makeText(this, mTipoCabelo, Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, mTamanhoCabelo, Toast.LENGTH_SHORT).show();
 
         //Verificando as combinações e populando o vetor
 
@@ -117,6 +118,12 @@ public class CortesRecActivity extends AppCompatActivity {
             img_id = new int[]{
                     R.drawable.cach_longo_1, R.drawable.cach_longo_2,
                     R.drawable.cach_longo_3,R.drawable.cach_longo_4
+            };
+        }else if(mTipoCabelo.equals("liso") && mTamanhoCabelo.equals("curto")){
+            img_id = new int[]{
+                    R.drawable.liso_curto_1, R.drawable.liso_curto_2,
+                    R.drawable.liso_curto_3, R.drawable.liso_curto_4,
+                    R.drawable.liso_curto_5
             };
         }
 

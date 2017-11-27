@@ -11,33 +11,37 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import static br.com.outputers.aplicativochavoso.R.id.entrar_image_button;
-
 public class Inicial extends AppCompatActivity {
 
     ImageButton btnTelaInicial;
 
-    CadastroDAO cadastroDAO;
+
+    //CadastroDAO cadastroDAO;
+    SharedPreferences CadastroPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicial2);
 
 
-        cadastroDAO = new CadastroDAO(this);// correção do null "Attempt to invoke virtual method..."
+        //cadastroDAO = new CadastroDAO(this);// correção do null "Attempt to invoke virtual method..."
 
-        String cadastrou = cadastroDAO.getDataCadastrou();
-        cadastroDAO.close(); // fechando o DAO
+        //String cadastrou = cadastroDAO.getDataCadastrou();
 
-        if(cadastrou.equals("sim")) {
+        CadastroPreferences = getSharedPreferences("cadastro",Context.MODE_PRIVATE);
+        Boolean cadastrou = CadastroPreferences.getBoolean("cadastrou", false);
+        Log.e("CADASTROU", cadastrou.toString());
+
+        //cadastroDAO.close(); // fechando o DAO
+
+        if(cadastrou) {
             intentEntrar2Vez(); // Caso o usuário já seja cadastrado
         }
 
-        btnTelaInicial = (ImageButton) findViewById(R.id.entrar_image_button);
+        btnTelaInicial = findViewById(R.id.logo);
         btnTelaInicial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 intentEntrar1Vez();
             }
         }) ;

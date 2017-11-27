@@ -1,14 +1,17 @@
 package br.com.outputers.aplicativochavoso;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class TelaInicial2vez extends AppCompatActivity {
 
-    Button CortesRec2;
+    ImageButton CortesRec2;
+    ImageButton EditarDados;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,5 +27,15 @@ public class TelaInicial2vez extends AppCompatActivity {
                 startActivity(vaiProCortesRec);
             }
         });
+
+        EditarDados = findViewById(R.id.btn_editar_dados);
+        EditarDados.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent vaiProCadastro = new Intent(TelaInicial2vez.this, AttCaractActivity.class);
+                startActivity(vaiProCadastro);
+            }
+        });
+
     }
 }

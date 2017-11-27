@@ -4,33 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#55acee"
+    android:background="#3c3c3c"
     tools:context="br.com.outputers.aplicativochavoso.Inicial">
 
-    <ImageView
+
+    <ImageButton
+        android:id="@+id/logo"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:scaleType="centerInside"
-        android:background="#dd2e44"
-        android:src="@drawable/faixa"
-        android:layout_centerVertical="true"
-        android:id="@+id/faixa"
-        android:layout_marginBottom="00dp"/>
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="match_parent"
         android:layout_marginBottom="15dp"
         android:scaleType="centerInside"
-        android:background="#55acee"
-        android:src="@drawable/rosto"
-        android:layout_above="@id/faixa"/>
-    <ImageButton
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/entrar_image_button"
-        android:scaleType="centerInside"
-        android:background="#dd2e44"
-        android:src="@drawable/botao_entrar"
-        android:layout_below="@id/faixa" />
+        android:src="@drawable/full_logo_gray"
+        android:layout_centerInParent="true"
+        android:background="#3c3c3c"/>
+
 
 </RelativeLayout>

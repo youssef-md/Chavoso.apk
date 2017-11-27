@@ -26,6 +26,7 @@ public class Tab3TamanhoC extends Fragment {
     ImageButton btnTamandoLongo;
 
     CadastroDAO cadastroDAO;
+    SharedPreferences CadastroPreferences;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -37,7 +38,7 @@ public class Tab3TamanhoC extends Fragment {
         btnTamandoLongo = rootView.findViewById(R.id.imgbtn_tamanho_longo);
 
 
-        final SharedPreferences preferences = this.getActivity().getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
+        final SharedPreferences CadastroPreferences = this.getActivity().getSharedPreferences("cadastro", Context.MODE_PRIVATE);
 
         btnTamanhoCurto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +46,7 @@ public class Tab3TamanhoC extends Fragment {
 
                 TamanhoCabelo = "curto";
                 GuardarTamanhoCabelo();
-                Toast.makeText(rootView.getContext(), "O seu cabelo é "+ cadastroDAO.getDataTamanhoCabelo(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(rootView.getContext(), "O seu cabelo é "+ CadastroPreferences.getString("tamanho_cabelo", "nao"), Toast.LENGTH_SHORT).show();
                 IntentCortesRec(rootView);
             }
         });
@@ -56,7 +57,7 @@ public class Tab3TamanhoC extends Fragment {
 
                 TamanhoCabelo = "medio";
                 GuardarTamanhoCabelo();
-                Toast.makeText(rootView.getContext(), "O seu cabelo é "+ cadastroDAO.getDataTamanhoCabelo(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(rootView.getContext(), "O seu cabelo é "+ CadastroPreferences.getString("tamanho_cabelo", "nao"), Toast.LENGTH_SHORT).show();
                 IntentCortesRec(rootView);
             }
         });
@@ -67,7 +68,7 @@ public class Tab3TamanhoC extends Fragment {
 
                 TamanhoCabelo = "longo";
                 GuardarTamanhoCabelo();
-                Toast.makeText(rootView.getContext(), "O seu cabelo é "+ cadastroDAO.getDataTamanhoCabelo(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(rootView.getContext(), "O seu cabelo é "+ CadastroPreferences.getString("tamanho_cabelo", "nao"), Toast.LENGTH_SHORT).show();
                 IntentCortesRec(rootView);
             }
         });
@@ -77,30 +78,40 @@ public class Tab3TamanhoC extends Fragment {
 
     public void GuardarTamanhoCabelo(){
 
-        cadastroDAO = new CadastroDAO(this.getContext());
+        /*cadastroDAO = new CadastroDAO(this.getContext());
         cadastroDAO.insertTamanhoCabelo(TamanhoCabelo);
         cadastroDAO.close();
+        */
+
+        CadastroPreferences = this.getActivity().getSharedPreferences("cadastro", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = CadastroPreferences.edit();
+        editor.putString("tamanho_cabelo", TamanhoCabelo);
+        editor.apply();
+
     }
 
 
     public void IntentCortesRec(View rootView) {
 
-        String mTipoRosto = cadastroDAO.getDataTipoRosto();
-        String mTipoCabelo = cadastroDAO.getDataTipoCabelo();
-        String mTamanhoCabelo = cadastroDAO.getDataTamanhoCabelo();
+        CadastroPreferences = this.getActivity().getSharedPreferences("cadastro", Context.MODE_PRIVATE);
 
-        //Toast.makeText(getActivity(), mTipoRosto, Toast.LENGTH_SHORT).show();
-        //Toast.makeText(getActivity(), mTipoCabelo, Toast.LENGTH_SHORT).show();
-        //Toast.makeText(getActivity(), mTamanhoCabelo, Toast.LENGTH_SHORT).show();
+        String mTipoRosto = CadastroPreferences.getString("tipo_rosto", "nao");
+        String mTipoCabelo = CadastroPreferences.getString("tipo_cabelo", "nao");
+        String mTamanhoCabelo = CadastroPreferences.getString("tamanho_cabelo", "nao");
         
         //Tratando usuário retardado
-        if (mTipoRosto == "nao" || mTipoCabelo.equals("nao") || mTamanhoCabelo.equals("nao")) {
+        if (mTipoRosto.equals("nao") || mTipoCabelo.equals("nao") || mTamanhoCabelo.equals("nao")) {
             Toast.makeText(rootView.getContext(), "Preencha todos os dados antes de prosseguir, mongol", Toast.LENGTH_SHORT).show();
         } else {
             Intent intentCortesRec = new Intent(getActivity(), CortesRecActivity.class);
 
-            cadastroDAO.insertCadastrou();
-            cadastroDAO.close();
+            //cadastroDAO.insertCadastrou();
+            //cadastroDAO.close();
+
+
+            SharedPreferences.Editor editor= CadastroPreferences.edit();
+            editor.putBoolean("cadastrou", true);
+            editor.apply();
 
             startActivity(intentCortesRec);
             getActivity().finish();

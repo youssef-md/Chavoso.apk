@@ -45,18 +45,22 @@ public class PopUp extends AppCompatActivity {
     ImageButton btnChavei;
     Button btnFechar;
 
-    CadastroDAO cadastroDAO;
+    //CadastroDAO cadastroDAO;
     String mTipoCabelo;
     String mTamanhoCabelo;
+    SharedPreferences CadastroPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
-        cadastroDAO = new CadastroDAO(this);
-        mTipoCabelo = cadastroDAO.getDataTipoCabelo();
-        mTamanhoCabelo = cadastroDAO.getDataTamanhoCabelo();
+        CadastroPreferences = getSharedPreferences("cadastro",Context.MODE_PRIVATE);
+
+        //cadastroDAO = new CadastroDAO(this);
+        mTipoCabelo = CadastroPreferences.getString("tipo_cabelo", "nao");
+        mTamanhoCabelo = CadastroPreferences.getString("tamanho_cabelo", "nao");
+        //cadastroDAO.close();
 
         VerificarCombinacao();
 
@@ -129,6 +133,12 @@ public class PopUp extends AppCompatActivity {
             full_img_id = new int[]{
                     R.drawable.full_cach_longo_1, R.drawable.full_cach_longo_2,
                     R.drawable.full_cach_longo_3, R.drawable.full_cach_longo_4
+            };
+        }else if(mTipoCabelo.equals("liso") && mTamanhoCabelo.equals("curto")){
+            full_img_id = new int[]{
+                    R.drawable.full_liso_curto_1, R.drawable.full_liso_curto_2,
+                    R.drawable.full_liso_curto_3, R.drawable.full_liso_curto_4,
+                    R.drawable.full_liso_curto_5
             };
         }
 

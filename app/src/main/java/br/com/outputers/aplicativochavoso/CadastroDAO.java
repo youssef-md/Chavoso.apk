@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -49,9 +50,17 @@ public class CadastroDAO extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
-        contentValues.put(COL_TIPO_ROSTO, tipo_rosto);
-        db.insert(TABLE_NAME, null, contentValues);
 
+        if(getDataTipoRosto().equals("nao")){ // o dado ainda não foi inserido
+            contentValues.put(COL_TIPO_ROSTO, tipo_rosto);
+            db.insert(TABLE_NAME, null, contentValues);
+            Log.e("CADASTRO DAO", "primeira vez, valor da tipo rosto = " + tipo_rosto);
+        }else{
+            String[] params = {tipo_rosto};
+            contentValues.put(COL_TIPO_ROSTO, tipo_rosto);
+            db.update(TABLE_NAME, contentValues, "tipo_rosto = ?", params);//passando o novo valor
+            Log.e("CADSATRO DAO", "editando tipo rosto = "+getDataTipoRosto());
+        }
     }
 
     public void insertTipoCabelo(String tipo_cabelo){
@@ -80,11 +89,11 @@ public class CadastroDAO extends SQLiteOpenHelper {
 
 
 
-    public String getDataTipoRosto(){
+    public String getDataTipoRosto( ){
 
         SQLiteDatabase db = this.getReadableDatabase();
 
-        String query = "SELECT tipo_rosto FROM "+TABLE_NAME+" WHERE tipo_rosto = tipo_rosto";
+        String query = "SELECT tipo_rosto FROM "+TABLE_NAME+" WHERE tipo_rosto= tipo_rosto";
         cursor = db.rawQuery(query,null);
 
         if(cursor.moveToFirst()){

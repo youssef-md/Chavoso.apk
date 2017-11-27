@@ -9,16 +9,20 @@ import android.os.Bundle;
 
 public class CuidadosActivity extends AppCompatActivity {
 
-
+    //CadastroDAO cadastroDAO;
+    SharedPreferences CadastroPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
-        SharedPreferences preferences = getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
-        String mTipoCabelo = preferences.getString("tipo_cabelo", "null");
+        CadastroPreferences = getSharedPreferences("cadastro",Context.MODE_PRIVATE);
 
+        //cadastroDAO = new CadastroDAO(this);
+
+        String mTipoCabelo = CadastroPreferences.getString("tipo_cabelo", "nao");
+        //cadastroDAO.close();
 
         //Verificando o tipo de cabelo para relacionar a tela CuidadoCabelo
         switch (mTipoCabelo) {
