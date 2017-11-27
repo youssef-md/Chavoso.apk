@@ -1,17 +1,17 @@
 package br.com.outputers.aplicativochavoso;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import java.util.ArrayList;
-
-import static br.com.outputers.aplicativochavoso.Tab2TCabelo.TipoCabelo;
-import static br.com.outputers.aplicativochavoso.Tab3TamanhoC.TamanhoCabelo;
 
 public class CortesRecActivity extends AppCompatActivity {
 
@@ -26,13 +26,22 @@ public class CortesRecActivity extends AppCompatActivity {
 
     ImageButton buttonCuidados;
 
+    CadastroDAO cadastroDAO;
+    String mTipoCabelo;
+    String mTamanhoCabelo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        //função para popular o vetor com base na combinação do usuário
+        super.onCreate(savedInstanceState);
+
+        cadastroDAO = new CadastroDAO(this);
+
+        mTipoCabelo = cadastroDAO.getDataTipoCabelo();
+        mTamanhoCabelo = cadastroDAO.getDataTamanhoCabelo();
+
         VerificarCombinacao();
 
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cortes_rec);
 
         //Instanciando
@@ -43,7 +52,6 @@ public class CortesRecActivity extends AppCompatActivity {
 
         // Populando o ArrayList
         for(int id : img_id){
-
             arrayList.add(new AlbumCortes(id));
         }
 
@@ -51,7 +59,7 @@ public class CortesRecActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
 
-        buttonCuidados = (ImageButton) findViewById(R.id.image_button_cuidados);
+        buttonCuidados = findViewById(R.id.image_button_cuidados);
         buttonCuidados.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,18 +71,23 @@ public class CortesRecActivity extends AppCompatActivity {
     }
 
 
-
     private void VerificarCombinacao() {
 
+
+
+        Toast.makeText(this, mTipoCabelo, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, mTamanhoCabelo, Toast.LENGTH_SHORT).show();
+
         //Verificando as combinações e populando o vetor
-        if(TipoCabelo == "afro" && TamanhoCabelo == "curto"){
+
+        if(mTipoCabelo.equals("afro") && mTamanhoCabelo.equals("curto")){
 
             img_id = new int[]{
-                    R.drawable.af_curto_1, R.drawable.af_curto_2,
-                    R.drawable.af_curto_3, R.drawable.af_curto_4,
+                    R.drawable.af_curto_1,R.drawable.af_curto_2,
+                    R.drawable.af_curto_3,R.drawable.af_curto_4,
                     R.drawable.af_curto_5
             };
-        }else if(TipoCabelo == "afro" && TamanhoCabelo == "medio"){
+        }else if(mTipoCabelo.equals("afro") && mTamanhoCabelo.equals("medio")){
 
             img_id = new int[]{
                     R.drawable.af_medio_1, R.drawable.af_medio_2,
@@ -82,30 +95,32 @@ public class CortesRecActivity extends AppCompatActivity {
                     R.drawable.af_medio_5
             };
 
-        } else if(TipoCabelo == "afro" && TamanhoCabelo == "longo"){
+        } else if(mTipoCabelo.equals("afro") && mTamanhoCabelo.equals("longo")){
 
             img_id = new int[]{
                     R.drawable.af_longo_1, R.drawable.af_longo_2,
                     R.drawable.af_longo_3,R.drawable.af_longo_4
             };
 
-        }else if(TipoCabelo == "cacheado" && TamanhoCabelo == "curto"){
+        }else if(mTipoCabelo.equals("cacheado") && mTamanhoCabelo.equals("curto")){
 
             img_id = new int[]{
                     R.drawable.cach_curto_1, R.drawable.cach_curto_2,
                     R.drawable.cach_curto_3, R.drawable.cach_curto_4
             };
-        }else if(TipoCabelo == "cacheado" && TamanhoCabelo == "medio"){
+        }else if(mTipoCabelo.equals("cacheado") && mTamanhoCabelo.equals("medio")){
             img_id = new int[]{
                     R.drawable.cach_medio_1, R.drawable.cach_medio_2,
                     R.drawable.cach_medio_3, R.drawable.cach_medio_4
             };
-        }else if(TipoCabelo == "cacheado" && TamanhoCabelo == "longo"){
+        }else if(mTipoCabelo.equals("cacheado") && mTamanhoCabelo.equals("longo")){
             img_id = new int[]{
                     R.drawable.cach_longo_1, R.drawable.cach_longo_2,
                     R.drawable.cach_longo_3,R.drawable.cach_longo_4
             };
         }
+
+
 
     }
 

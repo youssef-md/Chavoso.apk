@@ -3,6 +3,8 @@ package br.com.outputers.aplicativochavoso;
 /**
  * Created by Lucas Dutra on 11/09/2017.
  */
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +16,20 @@ import android.widget.Toast;
 
 public class Tab1TRosto extends Fragment  {
 
-    static String TipoRosto = "null";
+    String TipoRosto = "null";
 
     ImageButton btnRostoQuadrado;
     ImageButton btnRostoRedondo;
     ImageButton btnRostoOval;
     ImageButton btnRostoDiamante;
 
+    CadastroDAO cadastroDAO;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.tab1, container, false);
+
+
 
         //instanciando os btn, sempre usando rootView.
         btnRostoQuadrado = rootView.findViewById(R.id.imgbtn_rosto_quadrado);
@@ -33,12 +38,17 @@ public class Tab1TRosto extends Fragment  {
         btnRostoDiamante = rootView.findViewById(R.id.imgbtn_rosto_diamante);
 
 
+        //final SharedPreferences preferences = this.getActivity().getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
+
+        cadastroDAO = new CadastroDAO(this.getContext());
+
         btnRostoQuadrado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 TipoRosto = "quadrado";
-                Toast.makeText(rootView.getContext(), "O seu tipo de rosto é " + TipoRosto, Toast.LENGTH_SHORT).show();
+                GuardarTipoRosto();
+                Toast.makeText(rootView.getContext(), "O seu tipo de rosto é " + cadastroDAO.getDataTipoRosto(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -47,7 +57,8 @@ public class Tab1TRosto extends Fragment  {
             public void onClick(View view) {
 
                 TipoRosto = "redondo";
-                Toast.makeText(rootView.getContext(), "O seu tipo de rosto é " + TipoRosto, Toast.LENGTH_SHORT).show();
+                GuardarTipoRosto();
+                Toast.makeText(rootView.getContext(), "O seu tipo de rosto é " + cadastroDAO.getDataTipoRosto(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -56,7 +67,8 @@ public class Tab1TRosto extends Fragment  {
             public void onClick(View view) {
 
                 TipoRosto = "oval";
-                Toast.makeText(rootView.getContext(), "O seu tipo de rosto é " + TipoRosto, Toast.LENGTH_SHORT).show();
+                GuardarTipoRosto();
+                Toast.makeText(rootView.getContext(), "O seu tipo de rosto é " + cadastroDAO.getDataTipoRosto(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -65,11 +77,20 @@ public class Tab1TRosto extends Fragment  {
             public void onClick(View view) {
 
                 TipoRosto = "diamante";
-                Toast.makeText(rootView.getContext(),"O seu tipo de rosto é " + TipoRosto, Toast.LENGTH_SHORT).show();
+                GuardarTipoRosto();
+                Toast.makeText(rootView.getContext(),"O seu tipo de rosto é " + cadastroDAO.getDataTipoRosto(), Toast.LENGTH_SHORT).show();
             }
         });
 
         return rootView;
+    }
+
+    public void GuardarTipoRosto(){
+
+        cadastroDAO = new CadastroDAO(this.getContext());
+        cadastroDAO.insertTipoRosto(TipoRosto);
+        cadastroDAO.close();
+
     }
 
 }

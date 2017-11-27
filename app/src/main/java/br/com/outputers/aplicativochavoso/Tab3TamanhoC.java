@@ -1,6 +1,9 @@
 package br.com.outputers.aplicativochavoso;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,8 +12,6 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import static br.com.outputers.aplicativochavoso.Tab1TRosto.TipoRosto;
-import static br.com.outputers.aplicativochavoso.Tab2TCabelo.TipoCabelo;
 
 /**
  * Created by Lucas Dutra on 11/09/2017.
@@ -18,11 +19,13 @@ import static br.com.outputers.aplicativochavoso.Tab2TCabelo.TipoCabelo;
 
 public class Tab3TamanhoC extends Fragment {
 
-    static String TamanhoCabelo = "null";
+    String TamanhoCabelo = "null";
 
     ImageButton btnTamanhoCurto;
     ImageButton btnTamanhoMedio;
     ImageButton btnTamandoLongo;
+
+    CadastroDAO cadastroDAO;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -34,13 +37,15 @@ public class Tab3TamanhoC extends Fragment {
         btnTamandoLongo = rootView.findViewById(R.id.imgbtn_tamanho_longo);
 
 
+        final SharedPreferences preferences = this.getActivity().getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
 
         btnTamanhoCurto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 TamanhoCabelo = "curto";
-                Toast.makeText(rootView.getContext(), "O seu cabelo é "+ TamanhoCabelo, Toast.LENGTH_SHORT).show();
+                GuardarTamanhoCabelo();
+                Toast.makeText(rootView.getContext(), "O seu cabelo é "+ cadastroDAO.getDataTamanhoCabelo(), Toast.LENGTH_SHORT).show();
                 IntentCortesRec(rootView);
             }
         });
@@ -50,7 +55,8 @@ public class Tab3TamanhoC extends Fragment {
             public void onClick(View view) {
 
                 TamanhoCabelo = "medio";
-                Toast.makeText(rootView.getContext(), "O seu cabelo é "+ TamanhoCabelo, Toast.LENGTH_SHORT).show();
+                GuardarTamanhoCabelo();
+                Toast.makeText(rootView.getContext(), "O seu cabelo é "+ cadastroDAO.getDataTamanhoCabelo(), Toast.LENGTH_SHORT).show();
                 IntentCortesRec(rootView);
             }
         });
@@ -60,7 +66,8 @@ public class Tab3TamanhoC extends Fragment {
             public void onClick(View view) {
 
                 TamanhoCabelo = "longo";
-                Toast.makeText(rootView.getContext(), "O seu cabelo é "+ TamanhoCabelo, Toast.LENGTH_SHORT).show();
+                GuardarTamanhoCabelo();
+                Toast.makeText(rootView.getContext(), "O seu cabelo é "+ cadastroDAO.getDataTamanhoCabelo(), Toast.LENGTH_SHORT).show();
                 IntentCortesRec(rootView);
             }
         });
@@ -68,13 +75,33 @@ public class Tab3TamanhoC extends Fragment {
         return rootView;
     }
 
+    public void GuardarTamanhoCabelo(){
+
+        cadastroDAO = new CadastroDAO(this.getContext());
+        cadastroDAO.insertTamanhoCabelo(TamanhoCabelo);
+        cadastroDAO.close();
+    }
+
+
     public void IntentCortesRec(View rootView) {
 
+        String mTipoRosto = cadastroDAO.getDataTipoRosto();
+        String mTipoCabelo = cadastroDAO.getDataTipoCabelo();
+        String mTamanhoCabelo = cadastroDAO.getDataTamanhoCabelo();
+
+        //Toast.makeText(getActivity(), mTipoRosto, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity(), mTipoCabelo, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity(), mTamanhoCabelo, Toast.LENGTH_SHORT).show();
+        
         //Tratando usuário retardado
-        if (TipoRosto == "null" || TipoCabelo == "null" || TamanhoCabelo == "null") {
+        if (mTipoRosto == "nao" || mTipoCabelo.equals("nao") || mTamanhoCabelo.equals("nao")) {
             Toast.makeText(rootView.getContext(), "Preencha todos os dados antes de prosseguir, mongol", Toast.LENGTH_SHORT).show();
         } else {
             Intent intentCortesRec = new Intent(getActivity(), CortesRecActivity.class);
+
+            cadastroDAO.insertCadastrou();
+            cadastroDAO.close();
+
             startActivity(intentCortesRec);
             getActivity().finish();
         }
