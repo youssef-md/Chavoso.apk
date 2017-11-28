@@ -9,7 +9,6 @@ import android.os.Bundle;
 
 public class CuidadosActivity extends AppCompatActivity {
 
-    //CadastroDAO cadastroDAO;
     SharedPreferences CadastroPreferences;
 
     @Override
@@ -19,10 +18,7 @@ public class CuidadosActivity extends AppCompatActivity {
 
         CadastroPreferences = getSharedPreferences("cadastro",Context.MODE_PRIVATE);
 
-        //cadastroDAO = new CadastroDAO(this);
-
         String mTipoCabelo = CadastroPreferences.getString("tipo_cabelo", "nao");
-        //cadastroDAO.close();
 
         //Verificando o tipo de cabelo para relacionar a tela CuidadoCabelo
         switch (mTipoCabelo) {
@@ -39,7 +35,5 @@ public class CuidadosActivity extends AppCompatActivity {
                 setContentView(R.layout.activity_cuidado_ondulado);
                 break;
         }
-
     }
-
 }

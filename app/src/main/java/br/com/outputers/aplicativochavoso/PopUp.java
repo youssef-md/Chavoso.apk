@@ -1,40 +1,15 @@
 package br.com.outputers.aplicativochavoso;
 
-import android.Manifest;
-import android.annotation.TargetApi;
 import android.content.Context;
-import android.content.ContextWrapper;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.net.wifi.p2p.nsd.WifiP2pServiceRequest;
-import android.os.Build;
-import android.os.Environment;
-import android.provider.MediaStore;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 
 public class PopUp extends AppCompatActivity {
 
@@ -45,7 +20,7 @@ public class PopUp extends AppCompatActivity {
     ImageButton btnChavei;
     Button btnFechar;
 
-    //CadastroDAO cadastroDAO;
+
     String mTipoCabelo;
     String mTamanhoCabelo;
     SharedPreferences CadastroPreferences;
@@ -57,10 +32,9 @@ public class PopUp extends AppCompatActivity {
 
         CadastroPreferences = getSharedPreferences("cadastro",Context.MODE_PRIVATE);
 
-        //cadastroDAO = new CadastroDAO(this);
+
         mTipoCabelo = CadastroPreferences.getString("tipo_cabelo", "nao");
         mTamanhoCabelo = CadastroPreferences.getString("tamanho_cabelo", "nao");
-        //cadastroDAO.close();
 
         VerificarCombinacao();
 
@@ -80,7 +54,7 @@ public class PopUp extends AppCompatActivity {
             }
         });
 
-        //<Salvando o drawable clicado no INTERNAL STORAGE>
+
         btnChavei = findViewById(R.id.imgbtn_popup_chavei);
         btnChavei.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,9 +64,8 @@ public class PopUp extends AppCompatActivity {
 
             }
         });
-        //<Salvando o drawable clicado no SDCARD>
-    }
 
+    }
 
     private void VerificarCombinacao() {
 
@@ -141,7 +114,5 @@ public class PopUp extends AppCompatActivity {
                     R.drawable.full_liso_curto_5
             };
         }
-
     }
-
 }

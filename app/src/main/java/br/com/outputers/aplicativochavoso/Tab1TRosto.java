@@ -3,12 +3,12 @@ package br.com.outputers.aplicativochavoso;
 /**
  * Created by Lucas Dutra on 11/09/2017.
  */
-import android.app.TabActivity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,21 +41,12 @@ public class Tab1TRosto extends Fragment  {
         btnRostoDiamante = rootView.findViewById(R.id.imgbtn_rosto_diamante);
 
 
-        //final SharedPreferences preferences = this.getActivity().getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
-
-        //cadastroDAO = new CadastroDAO(this.getContext());
-
-
         btnRostoQuadrado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 TipoRosto = "quadrado";
-                //GuardarTipoRosto();
-                GuardarTipoRosto();
-                if(!CadastroPreferences.getBoolean("cadastrou",false))
-                    Toast.makeText(rootView.getContext(), "O seu tipo de rosto é " + CadastroPreferences.getString("tipo_rosto","nao"), Toast.LENGTH_SHORT).show();
-                switchTabInActivity(1);
+                GuardarTipoRosto(TipoRosto);
             }
         });
 
@@ -64,11 +55,7 @@ public class Tab1TRosto extends Fragment  {
             public void onClick(View view) {
 
                 TipoRosto = "redondo";
-                GuardarTipoRosto();
-                //GuardarTipoRosto();
-                if(!CadastroPreferences.getBoolean("cadastrou",false))
-                    Toast.makeText(rootView.getContext(), "O seu tipo de rosto é " + CadastroPreferences.getString("tipo_rosto","nao"), Toast.LENGTH_SHORT).show();
-                switchTabInActivity(1);
+                GuardarTipoRosto(TipoRosto);
             }
         });
 
@@ -77,11 +64,7 @@ public class Tab1TRosto extends Fragment  {
             public void onClick(View view) {
 
                 TipoRosto = "oval";
-                GuardarTipoRosto();
-                //GuardarTipoRosto();
-                if(!CadastroPreferences.getBoolean("cadastrou",false))
-                    Toast.makeText(rootView.getContext(), "O seu tipo de rosto é " + CadastroPreferences.getString("tipo_rosto","nao"), Toast.LENGTH_SHORT).show();
-                switchTabInActivity(1);
+                GuardarTipoRosto(TipoRosto);
             }
         });
 
@@ -90,35 +73,26 @@ public class Tab1TRosto extends Fragment  {
             public void onClick(View view) {
 
                 TipoRosto = "diamante";
-                GuardarTipoRosto();
-                //GuardarTipoRosto();
-                if(!CadastroPreferences.getBoolean("cadastrou",false))
-                    Toast.makeText(rootView.getContext(),"O seu tipo de rosto é " + CadastroPreferences.getString("tipo_rosto","nao"), Toast.LENGTH_SHORT).show();
-                switchTabInActivity(1);
+                GuardarTipoRosto(TipoRosto);
             }
         });
-
-        //cadastroDAO.close();
 
         return rootView;
     }
 
-    public void GuardarTipoRosto(){
-
+    public void GuardarTipoRosto(String tipo_rosto) {
 
         CadastroPreferences = this.getActivity().getSharedPreferences("cadastro", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = CadastroPreferences.edit();
-        editor.putString("tipo_rosto", TipoRosto);
+        editor.putString("tipo_rosto", tipo_rosto);
         editor.apply();
 
-
-        /*cadastroDAO = new CadastroDAO(this.getContext());
-        cadastroDAO.insertTipoRosto(TipoRosto);
-        cadastroDAO.close();
-        */
+        Log.e("Guardar Tipo Rosto", CadastroPreferences.getString("tipo_rosto","nao"));
+        switchTabInActivity(1);
     }
 
     public void switchTabInActivity(int index){
+
         TabLayout tabLayout = (TabLayout) getActivity().findViewById(R.id.tabs);
         TabLayout.Tab tab = tabLayout.getTabAt(index);
         tab.select();

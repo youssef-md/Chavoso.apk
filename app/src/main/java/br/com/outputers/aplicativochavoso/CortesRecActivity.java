@@ -1,6 +1,5 @@
 package br.com.outputers.aplicativochavoso;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -9,8 +8,6 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.Toast;
-
 import java.util.ArrayList;
 
 public class CortesRecActivity extends AppCompatActivity {
@@ -26,7 +23,6 @@ public class CortesRecActivity extends AppCompatActivity {
 
     ImageButton buttonCuidados;
 
-    //CadastroDAO cadastroDAO;
     String mTipoCabelo;
     String mTamanhoCabelo;
     SharedPreferences CadastroPreferences;
@@ -39,11 +35,6 @@ public class CortesRecActivity extends AppCompatActivity {
         CadastroPreferences = getSharedPreferences("cadastro",MODE_PRIVATE);
         mTipoCabelo = CadastroPreferences.getString("tipo_cabelo","nao");
         mTamanhoCabelo = CadastroPreferences.getString("tamanho_cabelo", "nao");
-
-        /*cadastroDAO = new CadastroDAO(this);
-        mTipoCabelo = cadastroDAO.getDataTipoCabelo();
-        mTamanhoCabelo = cadastroDAO.getDataTamanhoCabelo();
-        cadastroDAO.close();*/
 
         VerificarCombinacao();
 

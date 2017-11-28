@@ -15,8 +15,6 @@ public class Inicial extends AppCompatActivity {
 
     ImageButton btnTelaInicial;
 
-
-    //CadastroDAO cadastroDAO;
     SharedPreferences CadastroPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,15 +22,9 @@ public class Inicial extends AppCompatActivity {
         setContentView(R.layout.activity_inicial2);
 
 
-        //cadastroDAO = new CadastroDAO(this);// correção do null "Attempt to invoke virtual method..."
-
-        //String cadastrou = cadastroDAO.getDataCadastrou();
-
         CadastroPreferences = getSharedPreferences("cadastro",Context.MODE_PRIVATE);
         Boolean cadastrou = CadastroPreferences.getBoolean("cadastrou", false);
         Log.e("CADASTROU", cadastrou.toString());
-
-        //cadastroDAO.close(); // fechando o DAO
 
         if(cadastrou) {
             intentEntrar2Vez(); // Caso o usuário já seja cadastrado

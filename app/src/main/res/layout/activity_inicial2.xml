@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="15dp"
         android:scaleType="centerInside"
-        android:src="@drawable/full_logo_gray"
+        android:src="@drawable/chavoso_logo_png"
         android:layout_centerInParent="true"
         android:background="#3c3c3c"/>
 

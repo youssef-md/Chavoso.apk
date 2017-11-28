@@ -3,9 +3,9 @@ package br.com.outputers.aplicativochavoso;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +25,6 @@ public class Tab3TamanhoC extends Fragment {
     ImageButton btnTamanhoMedio;
     ImageButton btnTamandoLongo;
 
-    CadastroDAO cadastroDAO;
     SharedPreferences CadastroPreferences;
 
     @Override
@@ -46,8 +45,6 @@ public class Tab3TamanhoC extends Fragment {
 
                 TamanhoCabelo = "curto";
                 GuardarTamanhoCabelo();
-                if(!CadastroPreferences.getBoolean("cadastrou",false))
-                    Toast.makeText(rootView.getContext(), "O seu cabelo é "+ CadastroPreferences.getString("tamanho_cabelo", "nao"), Toast.LENGTH_SHORT).show();
                 IntentCortesRec(rootView);
             }
         });
@@ -58,8 +55,6 @@ public class Tab3TamanhoC extends Fragment {
 
                 TamanhoCabelo = "medio";
                 GuardarTamanhoCabelo();
-                if(!CadastroPreferences.getBoolean("cadastrou",false))
-                    Toast.makeText(rootView.getContext(), "O seu cabelo é "+ CadastroPreferences.getString("tamanho_cabelo", "nao"), Toast.LENGTH_SHORT).show();
                 IntentCortesRec(rootView);
             }
         });
@@ -70,8 +65,6 @@ public class Tab3TamanhoC extends Fragment {
 
                 TamanhoCabelo = "longo";
                 GuardarTamanhoCabelo();
-                if(!CadastroPreferences.getBoolean("cadastrou",false))
-                    Toast.makeText(rootView.getContext(), "O seu cabelo é "+ CadastroPreferences.getString("tamanho_cabelo", "nao"), Toast.LENGTH_SHORT).show();
                 IntentCortesRec(rootView);
             }
         });
@@ -81,15 +74,12 @@ public class Tab3TamanhoC extends Fragment {
 
     public void GuardarTamanhoCabelo(){
 
-        /*cadastroDAO = new CadastroDAO(this.getContext());
-        cadastroDAO.insertTamanhoCabelo(TamanhoCabelo);
-        cadastroDAO.close();
-        */
-
         CadastroPreferences = this.getActivity().getSharedPreferences("cadastro", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = CadastroPreferences.edit();
         editor.putString("tamanho_cabelo", TamanhoCabelo);
         editor.apply();
+
+        Log.e("Guardar Tipo Cabelo", CadastroPreferences.getString("tamanho_cabelo","nao"));
 
     }
 
@@ -97,6 +87,7 @@ public class Tab3TamanhoC extends Fragment {
     public void IntentCortesRec(View rootView) {
 
         CadastroPreferences = this.getActivity().getSharedPreferences("cadastro", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = CadastroPreferences.edit();
 
         String mTipoRosto = CadastroPreferences.getString("tipo_rosto", "nao");
         String mTipoCabelo = CadastroPreferences.getString("tipo_cabelo", "nao");
@@ -107,7 +98,7 @@ public class Tab3TamanhoC extends Fragment {
         //Tratando usuário retardado
         if (mTipoRosto.equals("nao") || mTipoCabelo.equals("nao") || mTamanhoCabelo.equals("nao")) {
 
-            Toast.makeText(rootView.getContext(), "Preencha todos os dados antes de prosseguir, mongol", Toast.LENGTH_SHORT).show();
+            Toast.makeText(rootView.getContext(), "Preencha todos os dados antes de prosseguir", Toast.LENGTH_SHORT).show();
 
         } else if(cadastrou){
 
@@ -116,19 +107,15 @@ public class Tab3TamanhoC extends Fragment {
 
         }else{
 
-            Intent intentCortesRec = new Intent(getActivity(), CortesRecActivity.class);
+            Intent intentSegundaTela = new Intent(getActivity(), TelaInicial2vez.class);
 
-            //cadastroDAO.insertCadastrou();
-            //cadastroDAO.close();
-
-
-            SharedPreferences.Editor editor= CadastroPreferences.edit();
             editor.putBoolean("cadastrou", true);
             editor.apply();
 
-            startActivity(intentCortesRec);
+            Toast.makeText(rootView.getContext(), "Seus dados foram salvos", Toast.LENGTH_SHORT).show();
+
+            startActivity(intentSegundaTela);
             getActivity().finish();
         }
     }
-
 }

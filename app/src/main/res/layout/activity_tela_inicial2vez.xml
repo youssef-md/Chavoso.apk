@@ -9,11 +9,15 @@
     tools:context="br.com.outputers.aplicativochavoso.TelaInicial2vez"
     android:background="#3c3c3c">
 
-    <ImageButton
-        android:background="@drawable/full_logo_gray"
+    <ImageView
+
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="15dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/chavoso_logo_png"
         android:layout_centerInParent="true"
-        android:layout_height="430dp" />
+        android:background="#3c3c3c" />
 
     <ImageButton
         android:id="@+id/btn_cortes_rec_2"

@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,9 +48,6 @@ public class Tab2TCabelo extends Fragment {
 
                 TipoCabelo = "afro";
                 GuardarTipoCabelo();
-
-                switchTabInActivity(2);
-
             }
         });
 
@@ -59,9 +57,6 @@ public class Tab2TCabelo extends Fragment {
 
                 TipoCabelo = "cacheado";
                 GuardarTipoCabelo();
-                if(!CadastroPreferences.getBoolean("cadastrou",false))
-                    Toast.makeText(rootView.getContext(),"O seu tipo de cabelo é " + CadastroPreferences.getString("tipo_cabelo", "nao"), Toast.LENGTH_SHORT).show();
-                switchTabInActivity(2);
             }
         });
 
@@ -71,9 +66,6 @@ public class Tab2TCabelo extends Fragment {
 
                 TipoCabelo = "liso";
                 GuardarTipoCabelo();
-                if(!CadastroPreferences.getBoolean("cadastrou",false))
-                    Toast.makeText(rootView.getContext(), "O seu tipo de cabelo é " + CadastroPreferences.getString("tipo_cabelo", "nao"), Toast.LENGTH_SHORT).show();
-                switchTabInActivity(2);
             }
         });
 
@@ -83,9 +75,6 @@ public class Tab2TCabelo extends Fragment {
 
                 TipoCabelo = "ondulado";
                 GuardarTipoCabelo();
-                if(!CadastroPreferences.getBoolean("cadastrou",false))
-                    Toast.makeText(rootView.getContext(), "O seu tipo de cabelo é " + CadastroPreferences.getString("tipo_cabelo", "nao"), Toast.LENGTH_SHORT).show();
-                switchTabInActivity(2);
             }
         });
 
@@ -94,16 +83,14 @@ public class Tab2TCabelo extends Fragment {
 
     public void GuardarTipoCabelo(){
 
-        /*cadastroDAO = new CadastroDAO(this.getContext());
-        cadastroDAO.insertTipoCabelo(TipoCabelo);
-        cadastroDAO.close();
-        */
         CadastroPreferences = this.getActivity().getSharedPreferences("cadastro", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = CadastroPreferences.edit();
         editor.putString("tipo_cabelo", TipoCabelo);
         editor.apply();
 
+        Log.e("Guardar Tipo Cabelo", CadastroPreferences.getString("tipo_cabelo","nao"));
 
+        switchTabInActivity(2);
     }
 
     public void switchTabInActivity(int index){
@@ -111,8 +98,6 @@ public class Tab2TCabelo extends Fragment {
         TabLayout.Tab tab = tabLayout.getTabAt(index);
         tab.select();
     }
-
-
 
 }
 
