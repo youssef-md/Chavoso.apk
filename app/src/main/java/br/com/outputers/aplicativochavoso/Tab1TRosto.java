@@ -3,8 +3,10 @@ package br.com.outputers.aplicativochavoso;
 /**
  * Created by Lucas Dutra on 11/09/2017.
  */
+import android.app.TabActivity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -51,7 +53,9 @@ public class Tab1TRosto extends Fragment  {
                 TipoRosto = "quadrado";
                 //GuardarTipoRosto();
                 GuardarTipoRosto();
-                Toast.makeText(rootView.getContext(), "O seu tipo de rosto é " + CadastroPreferences.getString("tipo_rosto","nao"), Toast.LENGTH_SHORT).show();
+                if(!CadastroPreferences.getBoolean("cadastrou",false))
+                    Toast.makeText(rootView.getContext(), "O seu tipo de rosto é " + CadastroPreferences.getString("tipo_rosto","nao"), Toast.LENGTH_SHORT).show();
+                switchTabInActivity(1);
             }
         });
 
@@ -62,7 +66,9 @@ public class Tab1TRosto extends Fragment  {
                 TipoRosto = "redondo";
                 GuardarTipoRosto();
                 //GuardarTipoRosto();
-                Toast.makeText(rootView.getContext(), "O seu tipo de rosto é " + CadastroPreferences.getString("tipo_rosto","nao"), Toast.LENGTH_SHORT).show();
+                if(!CadastroPreferences.getBoolean("cadastrou",false))
+                    Toast.makeText(rootView.getContext(), "O seu tipo de rosto é " + CadastroPreferences.getString("tipo_rosto","nao"), Toast.LENGTH_SHORT).show();
+                switchTabInActivity(1);
             }
         });
 
@@ -73,7 +79,9 @@ public class Tab1TRosto extends Fragment  {
                 TipoRosto = "oval";
                 GuardarTipoRosto();
                 //GuardarTipoRosto();
-                Toast.makeText(rootView.getContext(), "O seu tipo de rosto é " + CadastroPreferences.getString("tipo_rosto","nao"), Toast.LENGTH_SHORT).show();
+                if(!CadastroPreferences.getBoolean("cadastrou",false))
+                    Toast.makeText(rootView.getContext(), "O seu tipo de rosto é " + CadastroPreferences.getString("tipo_rosto","nao"), Toast.LENGTH_SHORT).show();
+                switchTabInActivity(1);
             }
         });
 
@@ -84,7 +92,9 @@ public class Tab1TRosto extends Fragment  {
                 TipoRosto = "diamante";
                 GuardarTipoRosto();
                 //GuardarTipoRosto();
-                Toast.makeText(rootView.getContext(),"O seu tipo de rosto é " + CadastroPreferences.getString("tipo_rosto","nao"), Toast.LENGTH_SHORT).show();
+                if(!CadastroPreferences.getBoolean("cadastrou",false))
+                    Toast.makeText(rootView.getContext(),"O seu tipo de rosto é " + CadastroPreferences.getString("tipo_rosto","nao"), Toast.LENGTH_SHORT).show();
+                switchTabInActivity(1);
             }
         });
 
@@ -108,4 +118,9 @@ public class Tab1TRosto extends Fragment  {
         */
     }
 
+    public void switchTabInActivity(int index){
+        TabLayout tabLayout = (TabLayout) getActivity().findViewById(R.id.tabs);
+        TabLayout.Tab tab = tabLayout.getTabAt(index);
+        tab.select();
+    }
 }

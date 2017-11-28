@@ -3,6 +3,7 @@ package br.com.outputers.aplicativochavoso;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,7 +47,9 @@ public class Tab2TCabelo extends Fragment {
 
                 TipoCabelo = "afro";
                 GuardarTipoCabelo();
-                Toast.makeText(rootView.getContext(), "O seu tipo de cabelo é " + CadastroPreferences.getString("tipo_cabelo", "nao"), Toast.LENGTH_SHORT).show();
+
+                switchTabInActivity(2);
+
             }
         });
 
@@ -56,7 +59,9 @@ public class Tab2TCabelo extends Fragment {
 
                 TipoCabelo = "cacheado";
                 GuardarTipoCabelo();
-                Toast.makeText(rootView.getContext(),"O seu tipo de cabelo é " + CadastroPreferences.getString("tipo_cabelo", "nao"), Toast.LENGTH_SHORT).show();
+                if(!CadastroPreferences.getBoolean("cadastrou",false))
+                    Toast.makeText(rootView.getContext(),"O seu tipo de cabelo é " + CadastroPreferences.getString("tipo_cabelo", "nao"), Toast.LENGTH_SHORT).show();
+                switchTabInActivity(2);
             }
         });
 
@@ -66,7 +71,9 @@ public class Tab2TCabelo extends Fragment {
 
                 TipoCabelo = "liso";
                 GuardarTipoCabelo();
-                Toast.makeText(rootView.getContext(), "O seu tipo de cabelo é " + CadastroPreferences.getString("tipo_cabelo", "nao"), Toast.LENGTH_SHORT).show();
+                if(!CadastroPreferences.getBoolean("cadastrou",false))
+                    Toast.makeText(rootView.getContext(), "O seu tipo de cabelo é " + CadastroPreferences.getString("tipo_cabelo", "nao"), Toast.LENGTH_SHORT).show();
+                switchTabInActivity(2);
             }
         });
 
@@ -76,7 +83,9 @@ public class Tab2TCabelo extends Fragment {
 
                 TipoCabelo = "ondulado";
                 GuardarTipoCabelo();
-                Toast.makeText(rootView.getContext(), "O seu tipo de cabelo é " + CadastroPreferences.getString("tipo_cabelo", "nao"), Toast.LENGTH_SHORT).show();
+                if(!CadastroPreferences.getBoolean("cadastrou",false))
+                    Toast.makeText(rootView.getContext(), "O seu tipo de cabelo é " + CadastroPreferences.getString("tipo_cabelo", "nao"), Toast.LENGTH_SHORT).show();
+                switchTabInActivity(2);
             }
         });
 
@@ -96,6 +105,14 @@ public class Tab2TCabelo extends Fragment {
 
 
     }
+
+    public void switchTabInActivity(int index){
+        TabLayout tabLayout = (TabLayout) getActivity().findViewById(R.id.tabs);
+        TabLayout.Tab tab = tabLayout.getTabAt(index);
+        tab.select();
+    }
+
+
 
 }
 

@@ -46,7 +46,8 @@ public class Tab3TamanhoC extends Fragment {
 
                 TamanhoCabelo = "curto";
                 GuardarTamanhoCabelo();
-                Toast.makeText(rootView.getContext(), "O seu cabelo é "+ CadastroPreferences.getString("tamanho_cabelo", "nao"), Toast.LENGTH_SHORT).show();
+                if(!CadastroPreferences.getBoolean("cadastrou",false))
+                    Toast.makeText(rootView.getContext(), "O seu cabelo é "+ CadastroPreferences.getString("tamanho_cabelo", "nao"), Toast.LENGTH_SHORT).show();
                 IntentCortesRec(rootView);
             }
         });
@@ -57,7 +58,8 @@ public class Tab3TamanhoC extends Fragment {
 
                 TamanhoCabelo = "medio";
                 GuardarTamanhoCabelo();
-                Toast.makeText(rootView.getContext(), "O seu cabelo é "+ CadastroPreferences.getString("tamanho_cabelo", "nao"), Toast.LENGTH_SHORT).show();
+                if(!CadastroPreferences.getBoolean("cadastrou",false))
+                    Toast.makeText(rootView.getContext(), "O seu cabelo é "+ CadastroPreferences.getString("tamanho_cabelo", "nao"), Toast.LENGTH_SHORT).show();
                 IntentCortesRec(rootView);
             }
         });
@@ -68,7 +70,8 @@ public class Tab3TamanhoC extends Fragment {
 
                 TamanhoCabelo = "longo";
                 GuardarTamanhoCabelo();
-                Toast.makeText(rootView.getContext(), "O seu cabelo é "+ CadastroPreferences.getString("tamanho_cabelo", "nao"), Toast.LENGTH_SHORT).show();
+                if(!CadastroPreferences.getBoolean("cadastrou",false))
+                    Toast.makeText(rootView.getContext(), "O seu cabelo é "+ CadastroPreferences.getString("tamanho_cabelo", "nao"), Toast.LENGTH_SHORT).show();
                 IntentCortesRec(rootView);
             }
         });
@@ -98,11 +101,21 @@ public class Tab3TamanhoC extends Fragment {
         String mTipoRosto = CadastroPreferences.getString("tipo_rosto", "nao");
         String mTipoCabelo = CadastroPreferences.getString("tipo_cabelo", "nao");
         String mTamanhoCabelo = CadastroPreferences.getString("tamanho_cabelo", "nao");
-        
+
+        Boolean cadastrou = CadastroPreferences.getBoolean("cadastrou", false);
+
         //Tratando usuário retardado
         if (mTipoRosto.equals("nao") || mTipoCabelo.equals("nao") || mTamanhoCabelo.equals("nao")) {
+
             Toast.makeText(rootView.getContext(), "Preencha todos os dados antes de prosseguir, mongol", Toast.LENGTH_SHORT).show();
-        } else {
+
+        } else if(cadastrou){
+
+            Toast.makeText(rootView.getContext(), "Seus dados foram atualizados", Toast.LENGTH_SHORT).show();
+            getActivity().finish();
+
+        }else{
+
             Intent intentCortesRec = new Intent(getActivity(), CortesRecActivity.class);
 
             //cadastroDAO.insertCadastrou();
