@@ -28,9 +28,6 @@
         </activity>
         <activity android:name=".PopUp" />
         <activity android:name=".CuidadosActivity" />
-        <activity android:name=".TutorialTipoRosto" />
-        <activity android:name=".TutorialTipoCabelo" />
-        <activity android:name=".TutorialTamanhoCabelo"></activity>
         <activity android:name=".TelaInicial2vez"></activity>
     </application>
 
