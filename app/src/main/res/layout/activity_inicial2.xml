@@ -8,15 +8,17 @@
     tools:context="br.com.outputers.aplicativochavoso.Inicial">
 
 
-    <ImageButton
-        android:id="@+id/logo"
+    <ImageView
+        android:id="@+id/logo_chavoso"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="30dp"
+        android:background="#3c3c3c"
         android:scaleType="centerInside"
-        android:src="@drawable/chavoso_logo_png"
-        android:layout_centerInParent="true"
-        android:background="#3c3c3c"/>
+        android:src="@drawable/chavoso_logo_png" />
 
 
 </RelativeLayout>
