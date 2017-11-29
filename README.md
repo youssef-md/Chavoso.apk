@@ -1,11 +1,6 @@
 
 Quantos de nós já ficamos em dúvida de qual corte de cabelo ficaria melhor, partindo dessa problemática que nós desenvolvemos um aplicativo para Android, ele será o seu guia e lhe recomendará os melhores cortes de cabelo para o seu tipo de rosto, seu tipo de cabelo e outros parâmetros, para que sua ida ao cabeleireiro seja menos desesperadora e que você saia de lá Chavoso. Mais informações você encontra na Wiki.
 
-## Teste o aplicativo
-```
-Disponível em:
-```
-* https://drive.google.com/open?id=1xpjnCvSGSZFUcwCopLoyjZhBn9UG4X35
 
 ## Requisitos Funcionais 
 ```
