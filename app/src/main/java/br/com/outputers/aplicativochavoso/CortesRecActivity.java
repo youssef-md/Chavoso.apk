@@ -123,7 +123,34 @@ public class CortesRecActivity extends AppCompatActivity {
                     R.drawable.liso_curto_3, R.drawable.liso_curto_4,
                     R.drawable.liso_curto_5
             };
+        }else if(mTipoCabelo.equals("liso") && mTamanhoCabelo.equals("medio")){
+            img_id = new int[]{
+                    R.drawable.liso_medio_1, R.drawable.liso_medio_2,
+                    R.drawable.liso_medio_3, R.drawable.liso_medio_4,
+                    R.drawable.liso_medio_5
+            };
+        }else if(mTipoCabelo.equals("liso") && mTamanhoCabelo.equals("longo")){
+            img_id = new int[]{
+                    R.drawable.liso_longo_1, R.drawable.liso_longo_2,
+                    R.drawable.liso_longo_3, R.drawable.liso_longo_4
+            };
+        }else if(mTipoCabelo.equals("ondulado") && mTamanhoCabelo.equals("curto")){
+            img_id = new int[]{
+                    R.drawable.ond_curto_1, R.drawable.ond_curto_2,
+                    R.drawable.ond_curto_3, R.drawable.ond_curto_4
+            };
+        }else if(mTipoCabelo.equals("ondulado") && mTamanhoCabelo.equals("medio")){
+            img_id = new int[]{
+                    R.drawable.ond_medio_1, R.drawable.ond_medio_2,
+                    R.drawable.ond_medio_3, R.drawable.ond_medio_4
+            };
+        }else if(mTipoCabelo.equals("ondulado") && mTamanhoCabelo.equals("longo")){
+            img_id = new int[]{
+                    R.drawable.ond_longo_1, R.drawable.ond_longo_2,
+                    R.drawable.ond_longo_3, R.drawable.ond_longo_4
+            };
         }
+
 
 
 

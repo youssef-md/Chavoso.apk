@@ -141,6 +141,34 @@ public class PopUp extends AppCompatActivity {
                     R.drawable.full_liso_curto_3, R.drawable.full_liso_curto_4,
                     R.drawable.full_liso_curto_5
             };
+        }else if(mTipoCabelo.equals("liso") && mTamanhoCabelo.equals("medio")){
+            full_img_id = new int[]{
+                    R.drawable.full_liso_medio_1, R.drawable.full_liso_medio_2,
+                    R.drawable.full_liso_medio_3, R.drawable.full_liso_medio_4,
+                    R.drawable.full_liso_medio_5
+            };
+        }else if(mTipoCabelo.equals("liso") && mTamanhoCabelo.equals("longo")){
+            full_img_id = new int[]{
+                    R.drawable.full_liso_longo_1, R.drawable.full_liso_longo_2,
+                    R.drawable.full_liso_longo_3, R.drawable.full_liso_longo_4
+            };
+        }else if(mTipoCabelo.equals("ondulado") && mTamanhoCabelo.equals("curto")){
+            full_img_id = new int[]{
+                    R.drawable.full_ond_curto_1, R.drawable.full_ond_curto_2,
+                    R.drawable.full_ond_curto_3, R.drawable.full_ond_curto_4
+            };
+        }else if(mTipoCabelo.equals("ondulado") && mTamanhoCabelo.equals("medio")){
+            full_img_id = new int[]{
+                    R.drawable.full_ond_medio_1, R.drawable.full_ond_medio_2,
+                    R.drawable.full_ond_medio_3, R.drawable.full_ond_medio_4
+            };
+        }else if(mTipoCabelo.equals("ondulado") && mTamanhoCabelo.equals("longo")){
+            full_img_id = new int[]{
+                    R.drawable.full_ond_longo_1, R.drawable.full_ond_longo_2,
+                    R.drawable.full_ond_longo_3, R.drawable.full_ond_longo_4
+            };
         }
+
+
     }
 }
