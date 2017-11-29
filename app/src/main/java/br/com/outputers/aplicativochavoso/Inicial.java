@@ -26,7 +26,7 @@ public class Inicial extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicial2);
 
-        imgViewLogo = findViewById(R.id.logo_chavoso);
+        imgViewLogo = findViewById(R.id.logo_splash);
 
         //splash
         Animation myanim = AnimationUtils.loadAnimation(this,R.anim.mytransition);

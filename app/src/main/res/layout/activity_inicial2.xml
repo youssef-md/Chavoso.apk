@@ -4,21 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3c3c3c"
+    android:background="#222226"
     tools:context="br.com.outputers.aplicativochavoso.Inicial">
 
 
     <ImageView
-        android:id="@+id/logo_chavoso"
+        android:id="@+id/logo_splash"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="30dp"
-        android:background="#3c3c3c"
+        android:layout_marginBottom="17dp"
+        android:background="#222226"
         android:scaleType="centerInside"
-        android:src="@drawable/chavoso_logo_png" />
+        android:src="@drawable/logo_splash" />
 
 
 </RelativeLayout>

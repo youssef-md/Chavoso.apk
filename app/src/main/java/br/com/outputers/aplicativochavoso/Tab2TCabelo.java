@@ -27,7 +27,7 @@ public class Tab2TCabelo extends Fragment {
 
     SharedPreferences CadastroPreferences;
 
-    //CadastroDAO cadastroDAO;
+    //CortesSalvosDAO cadastroDAO;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

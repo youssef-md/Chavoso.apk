@@ -1,14 +1,24 @@
 package br.com.outputers.aplicativochavoso;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Arrays;
 
 
 public class PopUp extends AppCompatActivity {
@@ -17,13 +27,13 @@ public class PopUp extends AppCompatActivity {
     //Objet vetor do caminho das imagens não populado
     public int[] full_img_id = new int[]{};
 
-    ImageButton btnChavei;
     Button btnFechar;
-
-
     String mTipoCabelo;
     String mTamanhoCabelo;
     SharedPreferences CadastroPreferences;
+    SharedPreferences CortesSalvos;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +41,7 @@ public class PopUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         CadastroPreferences = getSharedPreferences("cadastro",Context.MODE_PRIVATE);
-
+        CortesSalvos = getSharedPreferences("cortes_salvos", Context.MODE_PRIVATE);
 
         mTipoCabelo = CadastroPreferences.getString("tipo_cabelo", "nao");
         mTamanhoCabelo = CadastroPreferences.getString("tamanho_cabelo", "nao");
@@ -54,18 +64,36 @@ public class PopUp extends AppCompatActivity {
             }
         });
 
-
-        btnChavei = findViewById(R.id.imgbtn_popup_chavei);
-        btnChavei.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Toast.makeText(PopUp.this, "O Corte foi salvo ", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
     }
+
+    boolean saveBitmapToFile(File dir, String fileName, Bitmap bm,
+                             Bitmap.CompressFormat format, int quality) {
+
+        File imageFile = new File(dir,fileName);
+
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream(imageFile);
+
+            bm.compress(format,quality,fos);
+
+            fos.close();
+
+            return true;
+        }
+        catch (IOException e) {
+            Log.e("app",e.getMessage());
+            if (fos != null) {
+                try {
+                    fos.close();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+            }
+        }
+        return false;
+    }
+
 
     private void VerificarCombinacao() {
 

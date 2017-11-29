@@ -13,24 +13,29 @@ public class TelaInicial2vez extends AppCompatActivity {
 
     ImageButton CortesRec2;
     ImageButton EditarDados;
+
     SharedPreferences CadastroPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_inicial2vez);
+
+        CadastroPreferences = getSharedPreferences("cadastro", Context.MODE_PRIVATE);
+        final SharedPreferences.Editor editor = CadastroPreferences.edit();
 
 
         CortesRec2 = findViewById(R.id.btn_cortes_rec_2);
         CortesRec2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent vaiProCortesRec = new Intent(TelaInicial2vez.this, CortesRecActivity.class);
                 startActivity(vaiProCortesRec);
             }
         });
 
-        CadastroPreferences = getSharedPreferences("cadastro", Context.MODE_PRIVATE);
-        final SharedPreferences.Editor editor = CadastroPreferences.edit();
+
 
         EditarDados = findViewById(R.id.btn_editar_dados);
         EditarDados.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +47,8 @@ public class TelaInicial2vez extends AppCompatActivity {
                 startActivity(vaiProCadastro);
             }
         });
+
+
 
     }
 }

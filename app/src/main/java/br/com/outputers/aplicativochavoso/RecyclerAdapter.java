@@ -1,9 +1,9 @@
 package br.com.outputers.aplicativochavoso;
 
-import android.content.ContentProvider;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
+import android.content.SharedPreferences;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,12 +17,13 @@ import java.util.ArrayList;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
 
+
     ArrayList<AlbumCortes> arrayList = new ArrayList<>();
     Context context; // Context para o android saber quem sou eu ao criar uma Intent
 
+
     // Construtor que vai settar os valores que foram passados para eles nas variaveis desta classe
     public RecyclerAdapter(Context context, ArrayList<AlbumCortes> arrayList){
-
         this.arrayList = arrayList;
         this.context = context;
     }
@@ -30,8 +31,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_layout,
-                parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_layout_cortes_rec, parent, false);
 
         return new MyViewHolder(view);
     }
@@ -70,6 +70,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
         public MyViewHolder(View itemView) {
 
             super(itemView);
+
             imageView = itemView.findViewById(R.id.album_cortes_rec);
         }
     }

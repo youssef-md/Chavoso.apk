@@ -25,7 +25,7 @@ public class Tab1TRosto extends Fragment  {
     ImageButton btnRostoOval;
     ImageButton btnRostoDiamante;
 
-    //CadastroDAO cadastroDAO;
+    //CortesSalvosDAO cadastroDAO;
 
     SharedPreferences CadastroPreferences;
 

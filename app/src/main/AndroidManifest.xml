@@ -28,7 +28,7 @@
         </activity>
         <activity android:name=".PopUp" />
         <activity android:name=".CuidadosActivity" />
-        <activity android:name=".TelaInicial2vez"></activity>
+        <activity android:name=".TelaInicial2vez" />
     </application>
 
 </manifest>

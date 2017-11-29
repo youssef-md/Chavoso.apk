@@ -7,39 +7,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="br.com.outputers.aplicativochavoso.TelaInicial2vez"
-    android:background="#3c3c3c">
+    android:background="#222226">
 
     <ImageView
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="15dp"
-        android:scaleType="centerInside"
-        android:src="@drawable/chavoso_logo_png"
+        android:scaleType="fitCenter"
+        android:src="@drawable/menu_logo_blur"
         android:layout_centerInParent="true"
-        android:background="#3c3c3c" />
+        android:background="#222226"
+        android:id="@+id/imageView" />
 
     <ImageButton
         android:id="@+id/btn_cortes_rec_2"
-        android:layout_width="110dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-    <ImageButton
-        android:id="@+id/btn_cortes_salvos"
-        android:layout_width="110dp"
-        android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_marginTop="167dp"
+        android:background="@drawable/btn_cortes_rec" />
+
 
     <ImageButton
         android:id="@+id/btn_editar_dados"
-        android:layout_width="110dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btn_cortes_rec_2"
+        android:layout_marginTop="38dp"
+        android:background="@drawable/btn_editar" />
 
 
 

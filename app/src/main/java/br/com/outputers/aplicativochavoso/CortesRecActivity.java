@@ -32,7 +32,14 @@ public class CortesRecActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
+
         CadastroPreferences = getSharedPreferences("cadastro",MODE_PRIVATE);
+        SharedPreferences.Editor editor = CadastroPreferences.edit();
+        editor.putBoolean("RVCortes_Rec", true);
+        editor.apply();
+
+
+
         mTipoCabelo = CadastroPreferences.getString("tipo_cabelo","nao");
         mTamanhoCabelo = CadastroPreferences.getString("tamanho_cabelo", "nao");
 
