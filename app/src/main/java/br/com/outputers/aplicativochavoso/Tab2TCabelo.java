@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+
 /**
  * Created by Lucas Dutra on 11/09/2017.
  */
@@ -34,10 +36,17 @@ public class Tab2TCabelo extends Fragment {
 
         final View rootView = inflater.inflate(R.layout.tab2, container, false);
 
+        //Instanciando os ImageButton
         btnCabeloAfro = rootView.findViewById(R.id.imgbtn_cabelo_afro);
         btnCabeloCacheado = rootView.findViewById(R.id.imgbtn_cabelo_cacheado);
         btnCabeloLiso = rootView.findViewById(R.id.imgbtn_cabelo_liso);
         btnCabeloOndulado = rootView.findViewById(R.id.imgbtn_cabelo_ondulado);
+
+        //Usando o Glide para popular as imagens dos ImageButton
+        Glide.with(rootView).load(R.drawable.cabelo_afro).into(btnCabeloAfro);
+        Glide.with(rootView).load(R.drawable.cabelo_cacheado).into(btnCabeloCacheado);
+        Glide.with(rootView).load(R.drawable.cabelo_liso).into(btnCabeloLiso);
+        Glide.with(rootView).load(R.drawable.cabelo_ondulado).into(btnCabeloOndulado);
 
 
         final SharedPreferences CadastroPreferences = this.getActivity().getSharedPreferences("cadastro", Context.MODE_PRIVATE);

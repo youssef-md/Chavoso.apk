@@ -19,20 +19,20 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:background="@drawable/tamanho_curto"/>
+            android:background="#3c3c3c"/>
 
         <ImageButton
             android:id="@+id/imgbtn_tamanho_medio"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:background="@drawable/tamanho_medio"/>
+            android:background="#3c3c3c"/>
         <ImageButton
             android:id="@+id/imgbtn_tamanho_longo"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:background="@drawable/tamanho_longo"/>
+            android:background="#3c3c3c"/>
 
 
     </LinearLayout>

@@ -18,27 +18,27 @@
             android:id="@+id/imgbtn_rosto_diamante"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:background="@drawable/rosto_diamante"
+            android:background="#3c3c3c"
             android:layout_gravity="center"/>
         <ImageButton
             android:id="@+id/imgbtn_rosto_oval"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:background="@drawable/rosto_oval"
+            android:background="#3c3c3c"
             android:layout_gravity="center"/>
 
         <ImageButton
             android:id="@+id/imgbtn_rosto_quadrado"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:background="@drawable/rosto_quadrado"
+            android:background="#3c3c3c"
             android:layout_gravity="center"/>
 
         <ImageButton
             android:id="@+id/imgbtn_rosto_redondo"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:background="@drawable/rosto_redondo"
+            android:background="#3c3c3c"
             android:layout_gravity="center"/>
 
     </LinearLayout>

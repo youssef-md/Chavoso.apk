@@ -15,6 +15,8 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+
 
 public class Tab1TRosto extends Fragment  {
 
@@ -25,8 +27,6 @@ public class Tab1TRosto extends Fragment  {
     ImageButton btnRostoOval;
     ImageButton btnRostoDiamante;
 
-    //CortesSalvosDAO cadastroDAO;
-
     SharedPreferences CadastroPreferences;
 
     @Override
@@ -34,11 +34,19 @@ public class Tab1TRosto extends Fragment  {
 
         final View rootView = inflater.inflate(R.layout.tab1, container, false);
 
-        //instanciando os btn, sempre usando rootView.
+
+
+        //Instanciando os ImageButton.
         btnRostoQuadrado = rootView.findViewById(R.id.imgbtn_rosto_quadrado);
         btnRostoRedondo = rootView.findViewById(R.id.imgbtn_rosto_redondo);
         btnRostoOval = rootView.findViewById(R.id.imgbtn_rosto_oval);
         btnRostoDiamante = rootView.findViewById(R.id.imgbtn_rosto_diamante);
+
+        //Usando o Glide para popular as imagens dos ImageButton
+        Glide.with(rootView).load(R.drawable.rosto_quadrado).into(btnRostoQuadrado);
+        Glide.with(rootView).load(R.drawable.rosto_redondo).into(btnRostoRedondo);
+        Glide.with(rootView).load(R.drawable.rosto_oval).into(btnRostoOval);
+        Glide.with(rootView).load(R.drawable.rosto_diamante).into(btnRostoDiamante);
 
 
         btnRostoQuadrado.setOnClickListener(new View.OnClickListener() {

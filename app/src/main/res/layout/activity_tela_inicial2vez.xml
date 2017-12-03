@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="br.com.outputers.aplicativochavoso.TelaInicial2vez"
-    android:background="#222226">
+    android:background="#222126">
 
     <ImageView
 
@@ -17,7 +17,7 @@
         android:scaleType="fitCenter"
         android:src="@drawable/menu_logo_blur"
         android:layout_centerInParent="true"
-        android:background="#222226"
+        android:background="#222126"
         android:id="@+id/imageView" />
 
     <ImageButton
@@ -28,7 +28,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/imageView"
         android:layout_marginTop="167dp"
-        android:background="@drawable/btn_cortes_rec" />
+        android:background="#80222126"/>
 
 
     <ImageButton
@@ -39,9 +39,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/btn_cortes_rec_2"
         android:layout_marginTop="38dp"
-        android:background="@drawable/btn_editar" />
-
-
+        android:background="#80222126" />
 
 
 </RelativeLayout>

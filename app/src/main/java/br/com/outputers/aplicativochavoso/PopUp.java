@@ -31,9 +31,6 @@ public class PopUp extends AppCompatActivity {
     String mTipoCabelo;
     String mTamanhoCabelo;
     SharedPreferences CadastroPreferences;
-    SharedPreferences CortesSalvos;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +38,6 @@ public class PopUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         CadastroPreferences = getSharedPreferences("cadastro",Context.MODE_PRIVATE);
-        CortesSalvos = getSharedPreferences("cortes_salvos", Context.MODE_PRIVATE);
 
         mTipoCabelo = CadastroPreferences.getString("tipo_cabelo", "nao");
         mTamanhoCabelo = CadastroPreferences.getString("tamanho_cabelo", "nao");

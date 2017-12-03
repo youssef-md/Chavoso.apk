@@ -1,6 +1,7 @@
 package br.com.outputers.aplicativochavoso;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,6 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 /**
@@ -40,8 +44,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
 
+
         // Populando a RecyclerView
-        holder.imageView.setImageResource(arrayList.get(position).getImg_id());
+        //holder.imageView.setImageResource(arrayList.get(position).getImg_id());
+
+        Glide.with(context).load(arrayList.get(position).getImg_id()).into(holder.imageView);
 
         // Tratando o click em um determinado item
         holder.imageView.setOnClickListener(new View.OnClickListener() {

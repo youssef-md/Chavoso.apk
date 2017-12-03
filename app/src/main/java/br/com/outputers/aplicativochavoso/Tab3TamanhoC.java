@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+
 
 /**
  * Created by Lucas Dutra on 11/09/2017.
@@ -31,11 +33,15 @@ public class Tab3TamanhoC extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.tab3, container, false);
 
-
+        //Instanciando os ImageButton
         btnTamanhoCurto = rootView.findViewById(R.id.imgbtn_tamanho_curto);
         btnTamanhoMedio = rootView.findViewById(R.id.imgbtn_tamanho_medio);
         btnTamandoLongo = rootView.findViewById(R.id.imgbtn_tamanho_longo);
 
+        //Usando o Glide para popular as imagens dos ImageButton
+        Glide.with(rootView).load(R.drawable.tamanho_curto).into(btnTamanhoCurto);
+        Glide.with(rootView).load(R.drawable.tamanho_medio).into(btnTamanhoMedio);
+        Glide.with(rootView).load(R.drawable.tamanho_longo).into(btnTamandoLongo);
 
         final SharedPreferences CadastroPreferences = this.getActivity().getSharedPreferences("cadastro", Context.MODE_PRIVATE);
 
